@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1. What does CPU stand for?",
+    "lua_chon": {"A": "Central Process Unit", "B": "Central Processing Unit", "C": "Computer Personal Unit", "D": "Central Processor Utility"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 2. Which of the following is an input device?",
+    "lua_chon": {"A": "Monitor", "B": "Printer", "C": "Keyboard", "D": "Speaker"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 3. What does RAM stand for?",
+    "lua_chon": {"A": "Random Access Memory", "B": "Read Access Memory", "C": "Run Access Memory", "D": "Rapid Access Module"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 4. Which key combination is used to copy selected text?",
+    "lua_chon": {"A": "Ctrl + X", "B": "Ctrl + V", "C": "Ctrl + C", "D": "Ctrl + Z"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 5. What is the binary equivalent of decimal 10?",
+    "lua_chon": {"A": "1010", "B": "1001", "C": "1110", "D": "1100"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 6. Which language is considered the foundation of all programming languages?",
+    "lua_chon": {"A": "Python", "B": "Java", "C": "C", "D": "HTML"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 7. What does HTML stand for?",
+    "lua_chon": {"A": "Hyper Text Markup Language", "B": "High Text Modern Language", "C": "Hyperlink and Text Mark Language", "D": "Home Tool Markup Language"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 8. What is the primary function of an operating system?",
+    "lua_chon": {"A": "Manage memory", "B": "Run antivirus", "C": "Provide internet", "D": "Backup data"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 9. Which of the following is a web browser?",
+    "lua_chon": {"A": "Google Chrome", "B": "Windows", "C": "Linux", "D": "Microsoft Word"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 10. What does URL stand for?",
+    "lua_chon": {"A": "Uniform Resource Locator", "B": "Universal Resource Link", "C": "Uniform Remote Link", "D": "User Resource Location"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 11. Which one is NOT a type of computer network?",
+    "lua_chon": {"A": "LAN", "B": "MAN", "C": "WAN", "D": "FAN"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 12. Which of the following is a file extension for an image file?",
+    "lua_chon": {"A": ".docx", "B": ".jpg", "C": ".mp3", "D": ".exe"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 13. Which component stores data permanently?",
+    "lua_chon": {"A": "RAM", "B": "ROM", "C": "Hard drive", "D": "Cache"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 14. What is phishing?",
+    "lua_chon": {"A": "A type of malware", "B": "A hacking technique to steal personal data", "C": "A type of backup", "D": "A secure login method"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 15. Which shortcut key is used to undo an action?",
+    "lua_chon": {"A": "Ctrl + Y", "B": "Ctrl + Z", "C": "Ctrl + X", "D": "Ctrl + A"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 16. Which company developed the Windows operating system?",
+    "lua_chon": {"A": "Apple", "B": "Google", "C": "IBM", "D": "Microsoft"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 17. What is the brain of the computer?",
+    "lua_chon": {"A": "RAM", "B": "Hard disk", "C": "CPU", "D": "Monitor"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 18. Which storage device is portable?",
+    "lua_chon": {"A": "Hard disk drive", "B": "RAM", "C": "SSD", "D": "USB flash drive"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 19. What does IP stand for in computer networking?",
+    "lua_chon": {"A": "Internet Provider", "B": "Internet Protocol", "C": "Internal Port", "D": "Interface Point"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 20. Which of the following is NOT a programming language?",
+    "lua_chon": {"A": "Python", "B": "Ruby", "C": "JavaScript", "D": "Excel"},
+    "dap_an_dung": "D"
+  }
+]

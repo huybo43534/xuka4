@@ -1,0 +1,103 @@
+[
+    {
+        "noi_dung": "Câu 1. Công thức nào dưới đây là công thức của động năng?",
+        "lua_chon": {"A": "mgh", "B": "mv^2", "C": "1/2mv^2", "D": "Fds"},
+        "dap_an_dung": "C"
+    },
+    {
+        "noi_dung": "Câu 2. Đơn vị nào dưới đây đo lường độ lớn của điện trường?",
+        "lua_chon": {"A": "Volt", "B": "Ohm", "C": "Coulomb", "D": "Newton"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 3. Đường tròn có bán kính R đặt trong một trường điện trường đều đặt điện tích Q. Cường độ điện trường ở tâm của đường tròn là bao nhiêu?",
+        "lua_chon": {"A": "kQ/R", "B": "kQ/R^2", "C": "kQ/2R", "D": "kQ/2R^2"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 4. Định luật nào sau đây mô tả sự tương tác giữa hai dây dẫn dẫn điện chạm vào nhau?",
+        "lua_chon": {"A": "Định luật Coulomb", "B": "Định luật Ampere", "C": "Định luật Gauss", "D": "Định luật Lenz"},
+        "dap_an_dung": "B"
+    },
+    {
+        "noi_dung": "Câu 5. Biến thiên của năng lượng nội của một hệ khí lý tưởng trong một quá trình Isothermal là gì?",
+        "lua_chon": {"A": "Tăng", "B": "Giảm", "C": "Không đổi", "D": "Cần xác định thêm thông tin"},
+        "dap_an_dung": "C"
+    },
+    {
+        "noi_dung": "Câu 6. Một con lắc lò xo có chu kỳ dao động T. Nếu độ cứng của lò xo tăng lên 4 lần và khối lượng của vật tăng lên 9 lần, thì chu kỳ dao động mới là bao nhiêu lần chu kỳ ban đầu?",
+        "lua_chon": {"A": "2", "B": "3", "C": "4", "D": "6"},
+        "dap_an_dung": "B"
+    },
+    {
+        "noi_dung": "Câu 7. Áp suất tại một điểm trong chất lỏng sẽ tăng khi nhiệt độ:",
+        "lua_chon": {"A": "Tăng", "B": "Giảm", "C": "Không đổi", "D": "Không thể xác định"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 8. Nếu một chất khí nén được làm việc theo chu trình Isothermal, thì năng lượng nhiệt Q cung cấp cho chất khí trong mỗi vòng chu trình là bằng bao nhiêu?",
+        "lua_chon": {"A": "Q = 0", "B": "Q > 0", "C": "Q < 0", "D": "Không thể xác định"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 9. Một dây dẫn dài 1m có điện trở là 2 ohm. Nếu dây dẫn này được cắt làm hai phần bằng nhau và kết nối song song thì điện trở của mỗi phần là bao nhiêu?",
+        "lua_chon": {"A": "1 ohm", "B": "2 ohm", "C": "4 ohm", "D": "8 ohm"},
+        "dap_an_dung": "B"
+    },
+    {
+        "noi_dung": "Câu 10. Một lò xo có độ cứng là 200 N/m. Khi nó được kéo ra 10 cm và buông thì năng lượng cơ học lúc đầu được chuyển thành:",
+        "lua_chon": {"A": "Năng lượng động học", "B": "Năng lượng nhiệt", "C": "Năng lượng trong lò xo", "D": "Năng lượng cơ học"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 11. Sự chuyển động tương đối giữa hai hệ thống tạo ra ứng dụng địa phương của:",
+        "lua_chon": {"A": "Áp suất", "B": "Dòng điện", "C": "Trọng lực", "D": "Ma sát"},
+        "dap_an_dung": "D"
+    },
+    {
+        "noi_dung": "Câu 12. Một ống nghiệm có thể chứa 25ml nước. Tối đa bao nhiêu ml nước có thể chứa trong ống nghiệm khi được chìm sâu vào nước?",
+        "lua_chon": {"A": "25ml", "B": "50ml", "C": "75ml", "D": "100ml"},
+        "dap_an_dung": "B"
+    },
+    {
+        "noi_dung": "Câu 13. Áp suất trong một hệ thống khí đóng bình là 4 atm. Nếu thể tích của bình tăng gấp đôi và nhiệt độ giảm đi một nửa, áp suất mới trong bình là bao nhiêu?",
+        "lua_chon": {"A": "2 atm", "B": "4 atm", "C": "8 atm", "D": "16 atm"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 14. Một hòn bi rơi tự do từ độ cao 40m. Tốc độ của nó khi chạm đất là bao nhiêu?",
+        "lua_chon": {"A": "10 m/s", "B": "20 m/s", "C": "40 m/s", "D": "80 m/s"},
+        "dap_an_dung": "C"
+    },
+    {
+        "noi_dung": "Câu 15. Trong một mạch RC, thời gian để điện áp trên tụ điện tăng lên 63.2% giá trị cân bằng của nó được gọi là thời gian hằng của mạch và là bằng bao nhiêu?",
+        "lua_chon": {"A": "RC", "B": "LC", "C": "CR", "D": "LR"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 16. Sự tương tác giữa hai hạt mang điện tích trái dấu được gọi là:",
+        "lua_chon": {"A": "Hạt đơn vị", "B": "Cộng hưởng", "C": "Trừ hưởng", "D": "Trường điện trường"},
+        "dap_an_dung": "C"
+    },
+    {
+        "noi_dung": "Câu 17. Áp suất nào sau đây không được đo bằng đơn vị Pascal?",
+        "lua_chon": {"A": "Áp suất khí quyển", "B": "Áp suất hơi nước", "C": "Áp suất chân không", "D": "Áp suất nước trong chén đựng"},
+        "dap_an_dung": "D"
+    },
+    {
+        "noi_dung": "Câu 18. Động năng của một vật tăng lên 4 lần khi tốc độ của nó tăng lên bao nhiêu lần?",
+        "lua_chon": {"A": "1 lần", "B": "2 lần", "C": "3 lần", "D": "4 lần"},
+        "dap_an_dung": "B"
+    },
+    {
+        "noi_dung": "Câu 19. Độ biến thiên của lượng điện tích trong một đơn vị thời gian là đại lượng nào?",
+        "lua_chon": {"A": "Dòng điện", "B": "Hiệu điện thế", "C": "Dung lượng", "D": "Từ trường"},
+        "dap_an_dung": "A"
+    },
+    {
+        "noi_dung": "Câu 20. Trong quá trình đóng nén adiabatic, nếu áp suất của một khí tăng gấp 4 lần thì thể tích của nó sẽ:",
+        "lua_chon": {"A": "Tăng gấp 4 lần", "B": "Giảm gấp 4 lần", "C": "Tăng gấp 2 lần", "D": "Giảm gấp 2 lần"},
+        "dap_an_dung": "B"
+    }
+  ]
+  

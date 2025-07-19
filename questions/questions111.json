@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1: What is the formula for gravitational force?",
+    "lua_chon": { "A": "F = ma", "B": "F = mg", "C": "F = mv", "D": "F = mgh" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 2: What is the SI unit of force?",
+    "lua_chon": { "A": "Joule", "B": "Watt", "C": "Newton", "D": "Pascal" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 3: What is Ohm’s law?",
+    "lua_chon": { "A": "U = IR", "B": "F = ma", "C": "E = mc^2", "D": "P = IV" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 4: Which of these is a scalar quantity?",
+    "lua_chon": { "A": "Velocity", "B": "Force", "C": "Acceleration", "D": "Temperature" },
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 5: What does 'g' represent in physics?",
+    "lua_chon": { "A": "Velocity", "B": "Mass", "C": "Acceleration due to gravity", "D": "Friction force" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 6: Which law states that 'every action has an equal and opposite reaction'?",
+    "lua_chon": { "A": "Newton's First Law", "B": "Newton's Second Law", "C": "Newton's Third Law", "D": "Archimedes' Principle" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 7: What is the SI unit of work?",
+    "lua_chon": { "A": "Watt", "B": "Joule", "C": "Newton", "D": "Ampere" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 8: What is measured in Ohms?",
+    "lua_chon": { "A": "Power", "B": "Current", "C": "Resistance", "D": "Energy" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 9: Which device measures voltage?",
+    "lua_chon": { "A": "Ammeter", "B": "Voltmeter", "C": "Thermometer", "D": "Ohmmeter" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 10: What is the formula for kinetic energy?",
+    "lua_chon": { "A": "E = mgh", "B": "E = mc^2", "C": "E = 1/2mv^2", "D": "E = qU" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 11: What type of heat transfer involves fluid motion?",
+    "lua_chon": { "A": "Conduction", "B": "Radiation", "C": "Convection", "D": "Diffusion" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 12: Which instrument measures pressure?",
+    "lua_chon": { "A": "Voltmeter", "B": "Barometer", "C": "Ammeter", "D": "Micrometer" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 13: Frequency is measured in which unit?",
+    "lua_chon": { "A": "Hertz", "B": "Ohm", "C": "Watt", "D": "Joule" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 14: Which formula represents conservation of energy?",
+    "lua_chon": { "A": "E_total = PE + KE", "B": "P = IV", "C": "F = ma", "D": "U = IR" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 15: Which lens converges light rays?",
+    "lua_chon": { "A": "Concave", "B": "Convex", "C": "Flat", "D": "Reflective" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 16: What is the process of liquid turning into gas called?",
+    "lua_chon": { "A": "Condensation", "B": "Evaporation", "C": "Melting", "D": "Freezing" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 17: Which quantity is a vector?",
+    "lua_chon": { "A": "Temperature", "B": "Mass", "C": "Acceleration", "D": "Energy" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 18: What formula represents Archimedes' principle?",
+    "lua_chon": { "A": "F = ρgV", "B": "F = ma", "C": "F = qE", "D": "P = IV" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 19: What is the formula for pressure?",
+    "lua_chon": { "A": "P = F/A", "B": "P = mv", "C": "P = qU", "D": "P = E/t" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 20: Who discovered the law of universal gravitation?",
+    "lua_chon": { "A": "Einstein", "B": "Newton", "C": "Galileo", "D": "Archimedes" },
+    "dap_an_dung": "B"
+  }
+]

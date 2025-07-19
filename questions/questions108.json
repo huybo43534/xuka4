@@ -1,0 +1,104 @@
+[
+  {
+    "noi_dung": "第1問：3 ＋ 5 はいくつですか？",
+    "lua_chon": { "A": "6", "B": "7", "C": "8", "D": "9" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "第2問：「二乗」は英語で何と言いますか？",
+    "lua_chon": { "A": "Square", "B": "Triangle", "C": "Circle", "D": "Root" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "第3問：7 × 6 = ？",
+    "lua_chon": { "A": "42", "B": "36", "C": "48", "D": "54" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "第4問：「割り算」とはどれですか？",
+    "lua_chon": { "A": "+", "B": "-", "C": "×", "D": "÷" },
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "第5問：平方根√49 はいくつ？",
+    "lua_chon": { "A": "6", "B": "7", "C": "8", "D": "9" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第6問：次のうち、偶数はどれですか？",
+    "lua_chon": { "A": "3", "B": "7", "C": "8", "D": "9" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "第7問：100 ÷ 5 =？",
+    "lua_chon": { "A": "15", "B": "20", "C": "25", "D": "30" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第8問：「整数」はどれですか？",
+    "lua_chon": { "A": "3.5", "B": "0", "C": "2/3", "D": "√2" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第9問：5² =？",
+    "lua_chon": { "A": "10", "B": "15", "C": "20", "D": "25" },
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "第10問：π（パイ）はおよそいくつ？",
+    "lua_chon": { "A": "2.14", "B": "3.14", "C": "4.14", "D": "5.14" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第11問：3x = 12 のとき、x =？",
+    "lua_chon": { "A": "3", "B": "4", "C": "6", "D": "9" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第12問：次のうち素数（そすう）は？",
+    "lua_chon": { "A": "4", "B": "6", "C": "7", "D": "8" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "第13問：「面積」は英語で何と言いますか？",
+    "lua_chon": { "A": "Length", "B": "Volume", "C": "Area", "D": "Weight" },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "第14問：三角形の内角の和は何度ですか？",
+    "lua_chon": { "A": "90度", "B": "180度", "C": "270度", "D": "360度" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第15問：1メートルは何センチメートル？",
+    "lua_chon": { "A": "10cm", "B": "100cm", "C": "1000cm", "D": "10000cm" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第16問：円の面積はどの公式ですか？",
+    "lua_chon": {
+      "A": "πr²", "B": "2πr", "C": "πd", "D": "r²"
+    },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "第17問：2x + 3 = 11 のとき、x =？",
+    "lua_chon": { "A": "3", "B": "4", "C": "5", "D": "6" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第18問：-5 + 8 =？",
+    "lua_chon": { "A": "2", "B": "3", "C": "4", "D": "5" },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "第19問：「直角三角形」の英語は？",
+    "lua_chon": { "A": "Right triangle", "B": "Acute triangle", "C": "Obtuse triangle", "D": "Equilateral triangle" },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "第20問：10% の割引を受けた場合、1000円の商品はいくらですか？",
+    "lua_chon": { "A": "900円", "B": "950円", "C": "850円", "D": "800円" },
+    "dap_an_dung": "A"
+  }
+]

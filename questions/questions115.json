@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1. Quel est le symbole chimique du sodium ?",
+    "lua_chon": {"A": "So", "B": "Na", "C": "Sn", "D": "N"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 2. Quel est le pH d’une solution neutre ?",
+    "lua_chon": {"A": "0", "B": "7", "C": "14", "D": "1"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 3. Quelle est la formule chimique de l’eau ?",
+    "lua_chon": {"A": "H2O", "B": "CO2", "C": "O2", "D": "HO"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 4. Quel gaz est produit lors de la réaction entre l’acide chlorhydrique et le zinc ?",
+    "lua_chon": {"A": "Oxygène", "B": "Hydrogène", "C": "Azote", "D": "Hélium"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 5. Quelle particule a une charge négative ?",
+    "lua_chon": {"A": "Proton", "B": "Neutron", "C": "Électron", "D": "Ion"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 6. Quelle est la masse molaire du dioxyde de carbone (CO2) ?",
+    "lua_chon": {"A": "44 g/mol", "B": "28 g/mol", "C": "32 g/mol", "D": "18 g/mol"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 7. Quelle liaison est présente dans une molécule d’eau ?",
+    "lua_chon": {"A": "Ionique", "B": "Métallique", "C": "Covalente", "D": "Hydrogène"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 8. Quel est le numéro atomique du carbone ?",
+    "lua_chon": {"A": "6", "B": "12", "C": "8", "D": "4"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 9. Quel acide est présent dans le vinaigre ?",
+    "lua_chon": {"A": "Acide sulfurique", "B": "Acide nitrique", "C": "Acide acétique", "D": "Acide citrique"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 10. Quel est l’ion caractéristique des acides ?",
+    "lua_chon": {"A": "OH⁻", "B": "H⁺", "C": "Cl⁻", "D": "Na⁺"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 11. Quelle est la formule chimique de l’acide sulfurique ?",
+    "lua_chon": {"A": "H2SO3", "B": "H2SO4", "C": "HCl", "D": "HNO3"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 12. Un atome stable a combien d’électrons sur sa couche externe ?",
+    "lua_chon": {"A": "2", "B": "4", "C": "6", "D": "8"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 13. Quelle est la couleur du gaz chlore ?",
+    "lua_chon": {"A": "Incolore", "B": "Jaune-vert", "C": "Bleu", "D": "Rouge"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 14. Quel type de réaction libère de la chaleur ?",
+    "lua_chon": {"A": "Endothermique", "B": "Exothermique", "C": "Équilibrée", "D": "Réversible"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 15. Quel métal est le plus réactif ?",
+    "lua_chon": {"A": "Cuivre", "B": "Fer", "C": "Potassium", "D": "Zinc"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 16. Que mesure le pH-mètre ?",
+    "lua_chon": {"A": "Concentration d’ions Na⁺", "B": "Conductivité", "C": "Température", "D": "pH"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 17. Le méthane (CH4) est un exemple de :",
+    "lua_chon": {"A": "Sel", "B": "Hydrocarbure", "C": "Acide", "D": "Base"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 18. Quelle est la formule de l’ion ammonium ?",
+    "lua_chon": {"A": "NH3", "B": "NH4⁺", "C": "NO3⁻", "D": "NH2⁻"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 19. Une réaction chimique équilibrée respecte :",
+    "lua_chon": {"A": "La loi d’Avogadro", "B": "La loi de la conservation de la masse", "C": "La loi de Boyle", "D": "La loi de Charles"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 20. Quel est le rôle d’un catalyseur ?",
+    "lua_chon": {"A": "Il ralentit la réaction", "B": "Il augmente la masse", "C": "Il accélère la réaction", "D": "Il réagit complètement"},
+    "dap_an_dung": "C"
+  }
+]

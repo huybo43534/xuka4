@@ -1,0 +1,123 @@
+{
+    {
+      "noi_dung": "Domanda 1. Qual è il valore di π (pi greco) approssimato a due cifre decimali?",
+      "lua_chon": { "A": "3,14", "B": "3,41", "C": "2,71", "D": "1,62" },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 2. Quanto fa 7 × 8?",
+      "lua_chon": { "A": "54", "B": "56", "C": "64", "D": "48" },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 3. Qual è la derivata di x²?",
+      "lua_chon": { "A": "x", "B": "2x", "C": "x²", "D": "1" },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 4. Quale dei seguenti è un numero primo?",
+      "lua_chon": { "A": "21", "B": "33", "C": "17", "D": "27" },
+      "dap_an_dung": "C"
+    },
+    {
+      "noi_dung": "Domanda 5. Quanto fa √49?",
+      "lua_chon": { "A": "6", "B": "8", "C": "7", "D": "9" },
+      "dap_an_dung": "C"
+    },
+    {
+      "noi_dung": "Domanda 6. Qual è il valore assoluto di -15?",
+      "lua_chon": { "A": "-15", "B": "0", "C": "15", "D": "1" },
+      "dap_an_dung": "C"
+    },
+    {
+      "noi_dung": "Domanda 7. Cosa rappresenta il numero e in matematica?",
+      "lua_chon": {
+        "A": "La base dei logaritmi naturali",
+        "B": "Una costante fisica",
+        "C": "Una variabile aleatoria",
+        "D": "Un coefficiente di attrito"
+      },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 8. Qual è il risultato di 5²?",
+      "lua_chon": { "A": "25", "B": "10", "C": "15", "D": "20" },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 9. Quanto fa log₁₀(1000)?",
+      "lua_chon": { "A": "2", "B": "3", "C": "1", "D": "10" },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 10. Un angolo retto misura:",
+      "lua_chon": { "A": "45°", "B": "90°", "C": "180°", "D": "360°" },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 11. L'area di un cerchio si calcola con la formula:",
+      "lua_chon": { "A": "πr", "B": "πr²", "C": "2πr", "D": "r²/2" },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 12. Qual è la somma degli angoli interni di un triangolo?",
+      "lua_chon": { "A": "180°", "B": "360°", "C": "90°", "D": "270°" },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 13. Cos'è un numero razionale?",
+      "lua_chon": {
+        "A": "Un numero intero negativo",
+        "B": "Un numero che può essere espresso come frazione",
+        "C": "Un numero irrazionale",
+        "D": "Un numero primo"
+      },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 14. Qual è la formula per la retta?",
+      "lua_chon": {
+        "A": "y = ax² + bx + c",
+        "B": "y = mx + q",
+        "C": "x² + y² = r²",
+        "D": "y = e^x"
+      },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 15. Qual è la media di 4, 8 e 12?",
+      "lua_chon": { "A": "8", "B": "6", "C": "10", "D": "9" },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 16. Quanto fa (2 + 3) × 4?",
+      "lua_chon": { "A": "20", "B": "14", "C": "18", "D": "22" },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 17. Qual è la formula del Teorema di Pitagora?",
+      "lua_chon": {
+        "A": "a² + b² = c²",
+        "B": "a + b = c",
+        "C": "a² - b² = c²",
+        "D": "2a + 2b = c"
+      },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 18. Qual è l'inverso moltiplicativo di 5?",
+      "lua_chon": { "A": "1", "B": "0,2", "C": "-5", "D": "5" },
+      "dap_an_dung": "B"
+    },
+    {
+      "noi_dung": "Domanda 19. Qual è il minimo comune multiplo tra 6 e 8?",
+      "lua_chon": { "A": "24", "B": "48", "C": "12", "D": "18" },
+      "dap_an_dung": "A"
+    },
+    {
+      "noi_dung": "Domanda 20. Quanto fa 10% di 200?",
+      "lua_chon": { "A": "10", "B": "20", "C": "30", "D": "50" },
+      "dap_an_dung": "B"
+    }
+  ]
+}

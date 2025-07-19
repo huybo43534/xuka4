@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Câu 1. Hàm số nào sau đây là hàm số bậc hai?",
+    "lua_chon": {"A": "y = 2x + 3", "B": "y = x^2 + 2x + 1", "C": "y = 1/x", "D": "y = √x"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 2. Giá trị của biểu thức |−5| là bao nhiêu?",
+    "lua_chon": {"A": "5", "B": "−5", "C": "0", "D": "10"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 3. Phương trình nào sau đây có hai nghiệm phân biệt?",
+    "lua_chon": {"A": "x^2 - 4x + 4 = 0", "B": "x^2 + 1 = 0", "C": "x^2 - 5x + 6 = 0", "D": "x^2 = 0"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 4. Tập nghiệm của bất phương trình x^2 - 1 > 0 là?",
+    "lua_chon": {"A": "x < -1 hoặc x > 1", "B": "x > -1 và x < 1", "C": "x ≥ -1", "D": "x ≤ 1"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 5. Giá trị nhỏ nhất của hàm số y = x^2 + 4x + 5 là?",
+    "lua_chon": {"A": "5", "B": "1", "C": "4", "D": "−3"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 6. Phương trình đường thẳng đi qua điểm (1,2) và có hệ số góc 3 là?",
+    "lua_chon": {"A": "y = 3x + 2", "B": "y = 3x − 1", "C": "y = 3x − 1", "D": "y = 3x − 1"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 7. Diện tích hình tròn có bán kính R là?",
+    "lua_chon": {"A": "πR", "B": "2πR", "C": "πR^2", "D": "R^2"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 8. Đạo hàm của hàm số y = x^3 là?",
+    "lua_chon": {"A": "3x^2", "B": "x^2", "C": "3x", "D": "x^3"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 9. Hàm số y = √x xác định khi?",
+    "lua_chon": {"A": "x > 0", "B": "x ≥ 0", "C": "x < 0", "D": "x ≠ 0"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 10. Tích phân ∫(2x)dx bằng?",
+    "lua_chon": {"A": "x^2 + C", "B": "2x + C", "C": "x + C", "D": "x^2/2 + C"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 11. Giá trị của sin(30°) là?",
+    "lua_chon": {"A": "1", "B": "1/2", "C": "√3/2", "D": "0"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 12. Hệ phương trình nào sau đây có vô số nghiệm?",
+    "lua_chon": {"A": "x + y = 2, x − y = 0", "B": "x + y = 2, 2x + 2y = 4", "C": "x − y = 1, x − y = 2", "D": "x = 1, y = 2"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 13. Biểu thức log_10(100) bằng?",
+    "lua_chon": {"A": "1", "B": "2", "C": "10", "D": "0"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 14. Hàm số y = 1/x nghịch biến khi?",
+    "lua_chon": {"A": "x > 0", "B": "x < 0", "C": "x ≠ 0", "D": "Cả A và B"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Câu 15. Tập xác định của hàm số y = 1/(x−2) là?",
+    "lua_chon": {"A": "x ≠ 2", "B": "x = 2", "C": "x ≥ 2", "D": "x ≤ 2"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 16. Giải phương trình: 2x − 3 = 7",
+    "lua_chon": {"A": "x = 5", "B": "x = 2", "C": "x = −5", "D": "x = −2"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 17. Giá trị lớn nhất của hàm số y = −x^2 + 4x + 1 là?",
+    "lua_chon": {"A": "1", "B": "4", "C": "5", "D": "6"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Câu 18. Số nghiệm của phương trình x^2 + 1 = 0 trong tập số thực là?",
+    "lua_chon": {"A": "0", "B": "1", "C": "2", "D": "Vô số"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 19. Một tam giác đều có độ dài cạnh là a. Chu vi của nó là?",
+    "lua_chon": {"A": "3a", "B": "a^2", "C": "√3a", "D": "2a"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 20. Phương trình nào sau đây có nghiệm x = −2?",
+    "lua_chon": {"A": "x + 2 = 0", "B": "x − 2 = 0", "C": "x^2 − 4 = 0", "D": "x^2 + 2x + 4 = 0"},
+    "dap_an_dung": "A"
+  }
+]

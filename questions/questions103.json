@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Câu 1. Một tế bào sinh dưỡng của ruồi giấm (2n = 8) trải qua nguyên phân 3 lần tạo ra bao nhiêu tế bào con?",
+    "lua_chon": {"A": "6", "B": "8", "C": "16", "D": "24"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 2. Một gen dài 5100 Å có bao nhiêu cặp nuclêôtit?",
+    "lua_chon": {"A": "1500", "B": "2550", "C": "3400", "D": "5100"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 3. Một đoạn ADN có 3000 cặp nu và chứa 20% A. Số lượng T là bao nhiêu?",
+    "lua_chon": {"A": "600", "B": "1200", "C": "2400", "D": "3000"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 4. Trong quá trình phiên mã, nếu một gen có 1200 nucleotit thì số ribonucleotit tham gia phiên mã là?",
+    "lua_chon": {"A": "400", "B": "600", "C": "1200", "D": "2400"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 5. Một phân tử mARN dài 1500 ribonucleotit có thể mã hóa bao nhiêu axit amin?",
+    "lua_chon": {"A": "500", "B": "498", "C": "1497", "D": "1500"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 6. Một tế bào có bộ NST 2n = 6, khi giảm phân bình thường sẽ tạo ra bao nhiêu loại giao tử khác nhau do phân li độc lập?",
+    "lua_chon": {"A": "2", "B": "4", "C": "8", "D": "16"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 7. Một gen có 1500 cặp nucleotit, trong đó G chiếm 30%. Số lượng A của gen là?",
+    "lua_chon": {"A": "450", "B": "300", "C": "600", "D": "750"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 8. Một gen có chiều dài 2040 Å sẽ chứa bao nhiêu nucleotit?",
+    "lua_chon": {"A": "1020", "B": "2040", "C": "600", "D": "1200"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Câu 9. Một đoạn ADN có tổng số nuclêôtit là 3000, trong đó A = 600. Số nucleotit loại G là?",
+    "lua_chon": {"A": "600", "B": "900", "C": "1200", "D": "1500"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 10. Một gen có chiều dài 3060 Å và chứa 390 A. Số nu loại G là?",
+    "lua_chon": {"A": "510", "B": "1110", "C": "1200", "D": "1500"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 11. Một tế bào sinh tinh có bộ NST 2n = 46 khi giảm phân tạo ra tinh trùng. Số NST đơn trong 1 tinh trùng là?",
+    "lua_chon": {"A": "23", "B": "46", "C": "92", "D": "69"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 12. Một đoạn ADN có tổng số 3600 nucleotit và 780 A. Số lượng nucleotit loại G là?",
+    "lua_chon": {"A": "1020", "B": "1200", "C": "1500", "D": "1800"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 13. Một gen có số nucleotit loại G là 400, chiếm 20%. Tổng số nu trong gen là?",
+    "lua_chon": {"A": "2000", "B": "3000", "C": "4000", "D": "5000"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 14. Gen A có 1800 cặp nu và 540 T. Số G là?",
+    "lua_chon": {"A": "360", "B": "720", "C": "1260", "D": "1800"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 15. Một tế bào sinh dưỡng của một loài có 2n = 12. Trong quá trình nguyên phân, số NST có trong các tế bào con là?",
+    "lua_chon": {"A": "12", "B": "24", "C": "48", "D": "96"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 16. Một đoạn mARN gồm 1500 nu có thể mã hóa tối đa bao nhiêu axit amin?",
+    "lua_chon": {"A": "499", "B": "500", "C": "498", "D": "501"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 17. Khi một gen nhân đôi 2 lần sẽ cần bao nhiêu nucleotit tự do?",
+    "lua_chon": {"A": "2N", "B": "4N", "C": "3N", "D": "N"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 18. Một gen có 1200 cặp nu thì số liên kết hidro trong gen là bao nhiêu nếu G = 30%?",
+    "lua_chon": {"A": "3300", "B": "2700", "C": "3000", "D": "3600"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 19. Nếu có 3 cặp NST dị hợp thì có thể tạo tối đa bao nhiêu loại giao tử?",
+    "lua_chon": {"A": "4", "B": "6", "C": "8", "D": "16"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 20. Trong giảm phân, sự tổ hợp tự do của 2 cặp NST dị hợp sẽ tạo bao nhiêu loại giao tử?",
+    "lua_chon": {"A": "2", "B": "4", "C": "8", "D": "16"},
+    "dap_an_dung": "B"
+  }
+]

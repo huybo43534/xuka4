@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xukaxumy.com</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <style>
+    body {
+      background-image: url("https://i.imgur.com/xf1xlBy.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+      background-color: #6699FF;
+      color: red;
+      padding: 20px;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    nav {
+      background-color: #FFFF66;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #0099FF;
+      text-align: center;
+      padding: 12px 14px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: red;
+    }
+
+    .side-banner {
+      position: fixed;
+      top: 220px;
+      width: 400px;
+      height: 400px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: blue;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    .left-banner {
+      left: 10px;
+    }
+
+    .right-banner {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-banner left-banner">
+    BẢN DEMO XUKA 4.0<br><center><br>
+    <img src="https://i.ibb.co/93n3yn7p/login-qr-Huy-Tuan.png" alt="QR code" class="h-60 w-60"><br> Dùng ĐT chụp QR VÀ DÙNG QR để quyét
+  </div>
+
+  <div class="side-banner right-banner">
+    HƯỚNG DẪN SỬ DỤNG XUKA 4.0<br><br>B1: Bạn dùng ĐT chụp QR<br>B2: Dùng ảnh QR đưa vào ô CAMERA<br>B3: Tài khoản : admin<br> Mật khẩu: 123<br>B4: Điền tên và chọn mã đề<br>B5: Nộp bài và tải kết quả<p style="color: red;"><br>
+  Bản chính thức mỗi học sinh sẽ được cấp một mã QR, tài khoản và mật khẩu đăng nhập để làm bài
+</p>
+  </div>
+
+  <div class="banner">
+    <h1>
+    <span style="font-size: 32px; font-weight: bold;">XUKA 4.0</span><br>
+    <span style="font-size: 18px; font-weight: bold;">PHẦN MỀM TỔ CHỨC CÁC KỲ THI - KIỂM TRA</span>
+    </h1>
+
+
+  </div>
+
+  <nav><span style="font-size: 14px;">
+    <a href="#" class="flex items-center space-x-2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1024px-Flag_of_Vietnam.svg.png" alt="" class="h-6 w-6">
+    <span>
+  <b>TRƯỜNG THPT PHƯỚC LONG - PHƯỜNG PHƯỚC LONG - ĐÔNG NAI</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Bản quyền PHẠM HUY TUÂN - ĐT: 0389897989
+</span>
+
+
+    </a>
+  </nav>
+
+  <div id="qr-login" class="max-w-md mx-auto bg-white p-6 rounded shadow mt-6">
+    <center>
+    <h1 class="text-2xl font-bold text-red-600 mb-4">QUÉT MÃ QR</h1>
+    </center>
+
+
+
+    <div id="reader" style="width: 100%"></div>
+    <p id="qr-error" class="text-red-600 mt-2 font-semibold hidden">QR không hợp lệ!</p>
+  </div>
+
+  <div id="account-login" class="max-w-md mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4">Đăng Nhập Tài Khoản</h1>
+    <div class="mb-4">
+      <label class="block font-semibold">Tên đăng nhập:</label>
+      <input id="username" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Mật khẩu:</label>
+      <input id="password" type="password" class="w-full border p-2" />
+    </div>
+    <button onclick="checkLogin()" class="bg-blue-600 text-white px-4 py-2 rounded">Đăng nhập</button>
+    <p id="login-error" class="text-red-600 mt-2 font-semibold hidden">Sai tài khoản hoặc mật khẩu!</p>
+  </div>
+
+  <div id="login-form" class="max-w-xl mx-auto bg-white p-6 rounded shadow hidden">
+  <h1 class="text-2xl font-bold mb-4">Thông Tin Thí Sinh</h1>
+
+  <div class="mb-4">
+    <label class="block font-semibold">Họ và tên:</label>
+    <input id="hoten" type="text" class="w-full border p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label class="block font-semibold">Số báo danh:</label>
+    <input id="sbd" type="text" class="w-full border p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label class="block font-semibold">Ngày sinh:</label>
+    <input id="ngaysinh" type="date" class="w-full border p-2" />
+  </div>
+
+  <div class="mb-4">
+    <label class="block font-semibold">Mã đề:</label>
+    <select id="made" class="w-full border p-2">
+      <option value="">-- Chọn mã đề --</option>
+    </select>
+  </div>
+
+  <button onclick="startExam()" class="bg-green-600 text-white px-4 py-2 rounded">Bắt đầu thi</button>
+</div>
+
+
+  <div id="exam-container" class="max-w-3xl mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4 text-center">BÀI THI TRẮC NGHIỆM</h1>
+    <p id="countdown" class="text-red-600 font-bold mb-4">Thời gian: 60:00</p>
+    <div id="questions" class="space-y-4 mb-6"></div>
+    <button onclick="submitExam()" class="bg-blue-600 text-white px-4 py-2 rounded">Nộp bài</button>
+    <a id="downloadLink" class="mt-2 block text-blue-600 underline hidden" download>⤓ Tải kết quả</a>
+    <p id="result" class="mt-4 text-green-600 font-bold"></p>
+  </div>
+
+  <script>
+    let time = 60 * 60;
+    let questionData = [];
+    let timer = null;
+
+    for (let i = 101; i <= 124; i++) {
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = i;
+      document.getElementById("made").appendChild(opt);
+    }
+
+    const qrScanner = new Html5Qrcode("reader");
+    qrScanner.start({ facingMode: "environment" }, { fps: 10, qrbox: 250 }, (decoded) => {
+      try {
+        const { username, password } = JSON.parse(decoded);
+        document.getElementById("username").value = username;
+        document.getElementById("password").value = password;
+        qrScanner.stop().then(() => {
+          document.getElementById('qr-login').classList.add('hidden');
+          document.getElementById('account-login').classList.remove('hidden');
+          document.querySelectorAll('.side-banner').forEach(el => el.style.display = 'none');
+        });
+      } catch {
+        document.getElementById('qr-error').classList.remove('hidden');
+      }
+    });
+
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(() => {
+          document.getElementById('account-login').classList.add('hidden');
+          document.getElementById('login-form').classList.remove('hidden');
+        })
+        .catch(() => document.getElementById('login-error').classList.remove('hidden'));
+    }
+
+    function updateCountdown() {
+      const m = Math.floor(time / 60).toString().padStart(2, '0');
+      const s = (time % 60).toString().padStart(2, '0');
+      document.getElementById("countdown").innerText = `Thời gian: ${m}:${s}`;
+      if (time <= 0) {
+        clearInterval(timer);
+        submitExam();
+      }
+      time--;
+    }
+
+    function startExam() {
+     const name = document.getElementById('hoten').value.trim();
+     const sbd = document.getElementById('sbd').value.trim();
+	 const dob = document.getElementById("ngaysinh").value; // đúng
+     const made = document.getElementById('made').value;
+
+       if (!name || !sbd || !dob || !made) {
+      return alert("Vui lòng nhập đầy đủ Họ tên, SBD, Ngày sinh và Mã đề!");
+    }
+
+      document.getElementById("login-form").classList.add("hidden");
+      document.getElementById("exam-container").classList.remove("hidden");
+      timer = setInterval(updateCountdown, 1000);
+
+      fetch(`/questions?made=${made}`)
+        .then(res => res.json())
+        .then(data => {
+          questionData = data;
+          const questionsDiv = document.getElementById("questions");
+          questionsDiv.innerHTML = "";
+          questionData.forEach((q, i) => {
+            const options = Object.entries(q.lua_chon).map(
+              ([k, v]) => `<option value="${k}">${k}. ${v}</option>`
+            ).join("");
+
+            const div = document.createElement('div');
+            div.innerHTML = `
+              <label class="block font-semibold">Câu ${i + 1}: ${q.noi_dung}</label>
+              <select id="q${i}" class="border p-2 w-full">
+                <option value="">-- Chọn --</option>
+                ${options}
+              </select>
+            `;
+            questionsDiv.appendChild(div);
+          });
+        })
+        .catch(() => alert("Không thể tải file đề thi."));
+    }
+
+    function submitExam() {
+  clearInterval(timer);
+  const name = document.getElementById('hoten').value.trim();
+  const made = document.getElementById('made').value;
+  const sbd = document.getElementById('sbd').value.trim();
+  const dob = document.getElementById("ngaysinh").value; // đúng
+
+
+  let score = 0;
+
+  const answers = questionData.map((q, i) => {
+    const ans = document.getElementById(`q${i}`).value;
+    const isCorrect = ans === q.dap_an_dung;
+    if (isCorrect) score++;
+    return {
+      cau: i + 1,
+      da_chon: ans || '(chưa chọn)',
+      dung: isCorrect,
+      dung_chinh_xac: q.dap_an_dung
+    };
+  });
+
+  const finalScore = (score / questionData.length * 10).toFixed(2);
+  const resultText = `Họ tên: ${name}\nMã đề: ${made}\nĐiểm: ${finalScore}/10\n\nChi tiết:\n` +
+    answers.map(a =>
+      `Câu ${a.cau}: Đã chọn: ${a.da_chon} | Đúng: ${a.dung_chinh_xac} ${a.dung ? '✓' : '✗'}`
+    ).join('\n');
+
+  // Gửi kết quả lên server
+    fetch("/save_result", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hoten: name,
+      sbd: sbd,
+      ngaysinh: dob,
+      made: made,
+      diem: finalScore,
+      answers: answers.map((a, i) => ({
+        cau: i + 1,
+        da_chon: a.da_chon,
+        dung: a.dung,
+        dung_chinh_xac: a.dung_chinh_xac
+      }))
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "saved") {
+      window.location.href = "/download/" + data.filename;
+    } else {
+      alert("Không thể lưu kết quả. Vui lòng thử lại.");
+    }
+  })
+  .catch(err => {
+    console.error("Lỗi khi lưu kết quả:", err);
+    alert("Đã xảy ra lỗi khi lưu kết quả!");
+  });
+
+
+  // Tạo file txt và mở trong tab mới
+  const blob = new Blob([resultText], { type: "text/plain" });
+  const fileUrl = URL.createObjectURL(blob);
+  const newTab = window.open("", "_blank");
+
+  newTab.document.write(`
+    <html><head><title>Kết quả thi</title>
+      <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    </head><body class="bg-white text-black p-6">
+      <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl font-bold text-green-600 mb-4">KẾT QUẢ BÀI THI</h1>
+        <p><strong>Họ tên:</strong> ${name}</p>
+        <p><strong>Mã đề:</strong> ${made}</p>
+		<p><strong>Số báo danh:</strong> ${sbd}</p>
+        <p><strong>Ngày sinh:</strong> ${dob}</p>
+        <p><strong>Điểm:</strong> ${finalScore}/10</p>
+        <hr class="my-4" />
+        <div>
+          <h2 class="font-semibold mb-2">Chi tiết bài làm:</h2>
+          <ul class="space-y-1">
+            ${answers.map(a => `
+              <li>Câu ${a.cau}: Đã chọn: <strong>${a.da_chon}</strong> | Đúng: <strong>${a.dung_chinh_xac}</strong> ${a.dung ? '✅' : '❌'}</li>
+            `).join('')}
+          </ul>
+        </div>
+        <a href="${fileUrl}" download="KQ_${name.replace(/\\s+/g, '_')}_${made}.txt"
+          class="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          ⤓ Tải kết quả
+        </a>
+      </div>
+    </body></html>
+  `);
+  newTab.document.close();
+
+  // Tab hiện tại chuyển sang thông báo đơn giản
+  setTimeout(() => {
+    document.body.innerHTML = "<h1 style='text-align:center;padding-top:100px;font-size:24px;color:green;'>✅ Bài thi đã được nộp thành công!</h1>";
+  }, 1000);
+}
+
+    document.onkeydown = e => {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey) || e.ctrlKey) e.preventDefault();
+    };
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) alert("Không được chuyển tab!");
+    });
+	 document.addEventListener("DOMContentLoaded", () => {
+      const hoten = localStorage.getItem("hoten");
+      const made = localStorage.getItem("made");
+      if (hoten) document.getElementById("hoten").value = hoten;
+      if (made) document.getElementById("made").value = made;
+	  
+    });
+  </script>
+
+  <!-- TỰ ĐỘNG LƯU VÀ PHỤC HỒI ĐÁP ÁN + THỜI GIAN ĐẾM NGƯỢC -->
+  <script>
+    function restoreAnswers() {
+      const saved = JSON.parse(localStorage.getItem("savedAnswers") || "{}");
+      for (const [key, value] of Object.entries(saved)) {
+        const select = document.getElementById(key);
+        if (select) select.value = value;
+      }
+    }
+
+    function setupAnswerTracking() {
+      questionData.forEach((q, i) => {
+        const select = document.getElementById(`q${i}`);
+        const key = `q${i}`;
+        select.addEventListener("change", () => {
+          const current = JSON.parse(localStorage.getItem("savedAnswers") || "{}");
+          current[key] = select.value;
+          localStorage.setItem("savedAnswers", JSON.stringify(current));
+        });
+      });
+    }
+
+    // Cập nhật thời gian mỗi giây
+    setInterval(() => {
+      localStorage.setItem("savedTime", time);
+    }, 1000);
+
+    // Sau khi nộp bài => xóa dữ liệu tạm
+    function clearTempStorage() {
+      localStorage.removeItem("savedAnswers");
+      localStorage.removeItem("hoten");
+      localStorage.removeItem("made");
+      localStorage.removeItem("savedTime");
+    }
+  
+  </script>
+</body>
+</html>

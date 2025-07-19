@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1. What is the chemical symbol for water?",
+    "lua_chon": {"A": "HO", "B": "H2O", "C": "O2H", "D": "OH2"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 2. What is the atomic number of carbon?",
+    "lua_chon": {"A": "4", "B": "6", "C": "8", "D": "12"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 3. Which gas is essential for respiration?",
+    "lua_chon": {"A": "Hydrogen", "B": "Carbon dioxide", "C": "Oxygen", "D": "Nitrogen"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 4. What is NaCl commonly known as?",
+    "lua_chon": {"A": "Baking soda", "B": "Vinegar", "C": "Table salt", "D": "Sugar"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 5. What is the pH of pure water at 25°C?",
+    "lua_chon": {"A": "0", "B": "5", "C": "7", "D": "14"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 6. What is the lightest element on the periodic table?",
+    "lua_chon": {"A": "Oxygen", "B": "Hydrogen", "C": "Helium", "D": "Lithium"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 7. Which of the following is an alkaline earth metal?",
+    "lua_chon": {"A": "Sodium", "B": "Calcium", "C": "Iron", "D": "Chlorine"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 8. What type of bond involves sharing of electrons?",
+    "lua_chon": {"A": "Ionic", "B": "Covalent", "C": "Metallic", "D": "Hydrogen"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 9. What is the formula for sulfuric acid?",
+    "lua_chon": {"A": "HCl", "B": "HNO3", "C": "H2SO4", "D": "CH3COOH"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 10. Which element is found in all organic compounds?",
+    "lua_chon": {"A": "Carbon", "B": "Oxygen", "C": "Hydrogen", "D": "Nitrogen"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 11. What is the molar mass of water?",
+    "lua_chon": {"A": "16 g/mol", "B": "18 g/mol", "C": "20 g/mol", "D": "22 g/mol"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 12. What is the main component of air?",
+    "lua_chon": {"A": "Oxygen", "B": "Carbon dioxide", "C": "Nitrogen", "D": "Hydrogen"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 13. Which of the following is a noble gas?",
+    "lua_chon": {"A": "Helium", "B": "Oxygen", "C": "Hydrogen", "D": "Nitrogen"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 14. What is the charge on a proton?",
+    "lua_chon": {"A": "Negative", "B": "Positive", "C": "Neutral", "D": "Zero"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 15. Which element has the chemical symbol Fe?",
+    "lua_chon": {"A": "Fluorine", "B": "Iron", "C": "Francium", "D": "Fermium"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 16. What happens in a redox reaction?",
+    "lua_chon": {"A": "Only reduction occurs", "B": "Only oxidation occurs", "C": "Both oxidation and reduction occur", "D": "No reaction occurs"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 17. What is an isotope?",
+    "lua_chon": {"A": "Same protons, different neutrons", "B": "Same electrons, different protons", "C": "Same neutrons, different electrons", "D": "Same charge, different elements"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 18. What is the chemical formula of glucose?",
+    "lua_chon": {"A": "C6H6", "B": "C6H12O6", "C": "CH4", "D": "C2H5OH"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 19. What color does litmus paper turn in an acid?",
+    "lua_chon": {"A": "Red", "B": "Blue", "C": "Green", "D": "Yellow"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 20. What kind of reaction is burning of methane?",
+    "lua_chon": {"A": "Combination", "B": "Decomposition", "C": "Combustion", "D": "Neutralization"},
+    "dap_an_dung": "C"
+  }
+]
