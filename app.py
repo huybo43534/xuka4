@@ -6,6 +6,10 @@ from flask import render_template
 
 app = Flask(__name__)
 
+@app.route('/huongdan')
+def huongdan():
+    return render_template('huongdan.html')
+
 
 @app.route('/')
 def index():
@@ -80,3 +84,5 @@ def save_result():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
