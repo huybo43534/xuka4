@@ -17,7 +17,7 @@
     }
 
     .banner {
-      background-color: #6699FF;
+      background-image: url("https://i.imgur.com/xf1xlBy.png");
       color: red;
       padding: 20px;
       text-align: center;
@@ -70,7 +70,7 @@
   <!-- Các nút chức năng -->
   <div class="flex flex-wrap justify-center gap-4 mb-10">
     <a href="/tronde" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Tạo đề thi</a>
-    <a href="/xuka" class="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">PHIÊN BẢN XUKA</a>
+    <a href="/xuka" class="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">Đánh giá</a>
     <a href="/huongdan" class="bg-yellow-500 text-white px-6 py-3 rounded-lg shadow hover:bg-yellow-600 transition">Hướng dẫn</a>
   </div>
   <div id="account-login" class="max-w-md mx-auto bg-white p-6 rounded shadow hidden">
@@ -111,7 +111,6 @@
       <option value="">-- Chọn mã đề --</option>
     </select>
   </div>
-
   <button onclick="startExam()" class="bg-green-600 text-white px-4 py-2 rounded">Bắt đầu thi</button>
   </div>
   <div id="exam-container" class="max-w-3xl mx-auto bg-white p-6 rounded shadow hidden">
@@ -122,7 +121,6 @@
     <a id="downloadLink" class="mt-2 block text-blue-600 underline hidden" download>⤓ Tải kết quả</a>
     <p id="result" class="mt-4 text-green-600 font-bold"></p>
   </div>
-
   <script>
     let time = 60 * 60;
     let questionData = [];
@@ -223,8 +221,6 @@
   const made = document.getElementById('made').value;
   const sbd = document.getElementById('sbd').value.trim();
   const dob = document.getElementById("ngaysinh").value; // đúng
-
-
   let score = 0;
 
   const answers = questionData.map((q, i) => {
@@ -275,13 +271,10 @@
     console.error("Lỗi khi lưu kết quả:", err);
     alert("Đã xảy ra lỗi khi lưu kết quả!");
   });
-
-
   // Tạo file txt và mở trong tab mới
   const blob = new Blob([resultText], { type: "text/plain" });
   const fileUrl = URL.createObjectURL(blob);
   const newTab = window.open("", "_blank");
-
   newTab.document.write(`
     <html><head><title>Kết quả thi</title>
       <link href="https://cdn.tailwindcss.com" rel="stylesheet">
@@ -316,7 +309,6 @@
     document.body.innerHTML = "<h1 style='text-align:center;padding-top:100px;font-size:24px;color:green;'>✅ Bài thi đã được nộp thành công!</h1>";
         }, 1000);
     }
-
     document.onkeydown = e => {
       if (e.key === 'F12' || (e.ctrlKey && e.shiftKey) || e.ctrlKey) e.preventDefault();
     };
@@ -332,8 +324,6 @@
 	  
     });
   </script>
-
-  <!-- TỰ ĐỘNG LƯU VÀ PHỤC HỒI ĐÁP ÁN + THỜI GIAN ĐẾM NGƯỢC -->
   <script>
     function restoreAnswers() {
       const saved = JSON.parse(localStorage.getItem("savedAnswers") || "{}");
@@ -369,8 +359,6 @@
     }
   
   </script>
-    <!-- ... nội dung trang thi ... -->
-
   <footer class="text-center text-sm text-red-600 font-bold mt-8">
     Bản quyền © 2025 - PHẠM HUY TUÂN - ĐT : 0389897989
   </footer>
