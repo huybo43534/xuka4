@@ -10,6 +10,9 @@ app = Flask(__name__)
 def huongdan():
     return render_template('huongdan.html')
 
+@app.route('/tronde')
+def tronde():
+    return render_template('tronde.html')
 
 @app.route('/')
 def index():
