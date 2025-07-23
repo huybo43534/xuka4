@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>xukaxumy.com</title>
+  <title>xuka.com.vn</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/html5-qrcode"></script>
   <style>
@@ -47,9 +47,13 @@
 <body>
   <div class="banner">
     <h1>
-    <span style="font-size: 32px; font-weight: bold;">XUKA 4.0</span><br>
-    <span style="font-size: 18px; font-weight: bold;">PHẦN MỀM TỔ CHỨC CÁC KỲ THI - KIỂM TRA</span>
-    </h1>
+    <img src="D:/xuka4_ready/xuka.ico" alt="Ảnh XUKA" class="w-11 h-11 inline-block">
+	<span style="font-size: 30px; font-weight: bold;">XUKA 4.0</span>
+<span style="font-size: 16px; color: yellow; font-weight: bold; margin-left: 10px;">xuka.com.vn</span>
+<br>
+  <span style="font-size: 16px; font-weight: bold;">PHẦN MỀM TỔ CHỨC CÁC KỲ THI - KIỂM TRA</span>
+</h1>
+
   </div>
   <nav><span style="font-size: 14px;">
     <a href="#" class="flex items-center space-x-2">
@@ -66,7 +70,6 @@
     </h1>
     </center>
    <div id="reader" class="mx-auto" style="width: 90%; max-width: 300px;"></div>
-
     <p id="qr-error" class="text-red-600 mt-2 font-semibold hidden">QR không hợp lệ!</p>
   </div>
   <!-- Các nút chức năng -->
@@ -316,7 +319,6 @@
     };
 
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) alert("Không được chuyển tab!");
     });
 	 document.addEventListener("DOMContentLoaded", () => {
       const hoten = localStorage.getItem("hoten");
