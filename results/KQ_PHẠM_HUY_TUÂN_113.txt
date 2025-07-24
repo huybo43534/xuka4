@@ -1,0 +1,66 @@
+Họ tên: PHẠM HUY TUÂN
+Số báo danh: 123487779789
+Ngày sinh: 2025-07-13
+Mã đề: 113
+Điểm: 3.50/10
+
+Chi tiết:
+Câu 1: Câu 1. Công thức nào dưới đây là công thức của động năng?
+  → Đã chọn: A | Đúng: C ✗
+
+Câu 2: Câu 2. Đơn vị nào dưới đây đo lường độ lớn của điện trường?
+  → Đã chọn: B | Đúng: A ✗
+
+Câu 3: Câu 3. Đường tròn có bán kính R đặt trong một trường điện trường đều đặt điện tích Q. Cường độ điện trường ở tâm của đường tròn là bao nhiêu?
+  → Đã chọn: D | Đúng: A ✗
+
+Câu 4: Câu 4. Định luật nào sau đây mô tả sự tương tác giữa hai dây dẫn dẫn điện chạm vào nhau?
+  → Đã chọn: B | Đúng: B ✓
+
+Câu 5: Câu 5. Biến thiên của năng lượng nội của một hệ khí lý tưởng trong một quá trình Isothermal là gì?
+  → Đã chọn: B | Đúng: C ✗
+
+Câu 6: Câu 6. Một con lắc lò xo có chu kỳ dao động T. Nếu độ cứng của lò xo tăng lên 4 lần và khối lượng của vật tăng lên 9 lần, thì chu kỳ dao động mới là bao nhiêu lần chu kỳ ban đầu?
+  → Đã chọn: C | Đúng: B ✗
+
+Câu 7: Câu 7. Áp suất tại một điểm trong chất lỏng sẽ tăng khi nhiệt độ:
+  → Đã chọn: B | Đúng: A ✗
+
+Câu 8: Câu 8. Nếu một chất khí nén được làm việc theo chu trình Isothermal, thì năng lượng nhiệt Q cung cấp cho chất khí trong mỗi vòng chu trình là bằng bao nhiêu?
+  → Đã chọn: A | Đúng: A ✓
+
+Câu 9: Câu 9. Một dây dẫn dài 1m có điện trở là 2 ohm. Nếu dây dẫn này được cắt làm hai phần bằng nhau và kết nối song song thì điện trở của mỗi phần là bao nhiêu?
+  → Đã chọn: B | Đúng: B ✓
+
+Câu 10: Câu 10. Một lò xo có độ cứng là 200 N/m. Khi nó được kéo ra 10 cm và buông thì năng lượng cơ học lúc đầu được chuyển thành:
+  → Đã chọn: C | Đúng: A ✗
+
+Câu 11: Câu 11. Sự chuyển động tương đối giữa hai hệ thống tạo ra ứng dụng địa phương của:
+  → Đã chọn: D | Đúng: D ✓
+
+Câu 12: Câu 12. Một ống nghiệm có thể chứa 25ml nước. Tối đa bao nhiêu ml nước có thể chứa trong ống nghiệm khi được chìm sâu vào nước?
+  → Đã chọn: B | Đúng: B ✓
+
+Câu 13: Câu 13. Áp suất trong một hệ thống khí đóng bình là 4 atm. Nếu thể tích của bình tăng gấp đôi và nhiệt độ giảm đi một nửa, áp suất mới trong bình là bao nhiêu?
+  → Đã chọn: B | Đúng: A ✗
+
+Câu 14: Câu 14. Một hòn bi rơi tự do từ độ cao 40m. Tốc độ của nó khi chạm đất là bao nhiêu?
+  → Đã chọn: D | Đúng: C ✗
+
+Câu 15: Câu 15. Trong một mạch RC, thời gian để điện áp trên tụ điện tăng lên 63.2% giá trị cân bằng của nó được gọi là thời gian hằng của mạch và là bằng bao nhiêu?
+  → Đã chọn: B | Đúng: A ✗
+
+Câu 16: Câu 16. Sự tương tác giữa hai hạt mang điện tích trái dấu được gọi là:
+  → Đã chọn: B | Đúng: C ✗
+
+Câu 17: Câu 17. Áp suất nào sau đây không được đo bằng đơn vị Pascal?
+  → Đã chọn: A | Đúng: D ✗
+
+Câu 18: Câu 18. Động năng của một vật tăng lên 4 lần khi tốc độ của nó tăng lên bao nhiêu lần?
+  → Đã chọn: B | Đúng: B ✓
+
+Câu 19: Câu 19. Độ biến thiên của lượng điện tích trong một đơn vị thời gian là đại lượng nào?
+  → Đã chọn: B | Đúng: A ✗
+
+Câu 20: Câu 20. Trong quá trình đóng nén adiabatic, nếu áp suất của một khí tăng gấp 4 lần thì thể tích của nó sẽ:
+  → Đã chọn: B | Đúng: B ✓
