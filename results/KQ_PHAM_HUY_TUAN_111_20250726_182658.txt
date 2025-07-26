@@ -1,15 +1,15 @@
 Họ tên: PHẠM HUY TUÂN
-SBD: 123487779789
-Ngày sinh: 2025-07-13
+Số báo danh: 123487779789
+Ngày sinh: 2025-07-16
 Mã đề: 111
-Điểm: 0.50/10
+Điểm: 0.00/10
 
-Chi tiết bài làm:
+Chi tiết:
 Câu 1: Question 1: What is the formula for gravitational force?
-  → Đã chọn: B | Đúng: B ✓
+  → Đã chọn: A | Đúng: B ✗
 
 Câu 2: Question 2: What is the SI unit of force?
-  → Đã chọn: (chưa chọn) | Đúng: C ✗
+  → Đã chọn: A | Đúng: C ✗
 
 Câu 3: Question 3: What is Ohm’s law?
   → Đã chọn: (chưa chọn) | Đúng: A ✗
@@ -64,4 +64,3 @@ Câu 19: Question 19: What is the formula for pressure?
 
 Câu 20: Question 20: Who discovered the law of universal gravitation?
   → Đã chọn: (chưa chọn) | Đúng: B ✗
-

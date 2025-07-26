@@ -1,30 +1,30 @@
 Họ tên: PHẠM HUY TUÂN
 Số báo danh: 123487779789
-Ngày sinh: 2025-07-06
-Mã đề: 110
-Điểm: 1.00/10
+Ngày sinh: 2025-07-11
+Mã đề: 113
+Điểm: 0.00/10
 
 Chi tiết:
 Câu 1: Câu 1. Công thức nào dưới đây là công thức của động năng?
-  → Đã chọn: A | Đúng: C ✗
+  → Đã chọn: B | Đúng: C ✗
 
 Câu 2: Câu 2. Đơn vị nào dưới đây đo lường độ lớn của điện trường?
-  → Đã chọn: A | Đúng: A ✓
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
 
 Câu 3: Câu 3. Đường tròn có bán kính R đặt trong một trường điện trường đều đặt điện tích Q. Cường độ điện trường ở tâm của đường tròn là bao nhiêu?
-  → Đã chọn: B | Đúng: A ✗
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
 
 Câu 4: Câu 4. Định luật nào sau đây mô tả sự tương tác giữa hai dây dẫn dẫn điện chạm vào nhau?
-  → Đã chọn: A | Đúng: B ✗
+  → Đã chọn: (chưa chọn) | Đúng: B ✗
 
 Câu 5: Câu 5. Biến thiên của năng lượng nội của một hệ khí lý tưởng trong một quá trình Isothermal là gì?
-  → Đã chọn: C | Đúng: C ✓
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
 
 Câu 6: Câu 6. Một con lắc lò xo có chu kỳ dao động T. Nếu độ cứng của lò xo tăng lên 4 lần và khối lượng của vật tăng lên 9 lần, thì chu kỳ dao động mới là bao nhiêu lần chu kỳ ban đầu?
-  → Đã chọn: C | Đúng: B ✗
+  → Đã chọn: (chưa chọn) | Đúng: B ✗
 
 Câu 7: Câu 7. Áp suất tại một điểm trong chất lỏng sẽ tăng khi nhiệt độ:
-  → Đã chọn: C | Đúng: A ✗
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
 
 Câu 8: Câu 8. Nếu một chất khí nén được làm việc theo chu trình Isothermal, thì năng lượng nhiệt Q cung cấp cho chất khí trong mỗi vòng chu trình là bằng bao nhiêu?
   → Đã chọn: (chưa chọn) | Đúng: A ✗

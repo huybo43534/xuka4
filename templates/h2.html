@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xuka.com.vn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      margin: 0;
+      padding-top: 80px;
+      min-height: 100vh;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: monospace;
+      margin-bottom: 12px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="fixed top-0 left-0 right-0 bg-[#87CEFA] shadow-md z-50">
+    <div class="flex justify-between items-center px-4 py-3">
+      <h1 class="text-[#FF3300] text-2xl font-bold">
+        <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" class="w-8 h-8 inline-block mr-2">
+        XUKA 4.0
+        <span class="text-yellow-400 text-sm ml-2">xuka.com.vn</span>
+      </h1>
+      <div class="space-x-2">
+        <button id="tabRegister" onclick="showTab('register')" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">TẠO TÀI KHOẢN & QR</button>
+        <button id="tabShuffle" onclick="showTab('shuffle')" class="px-3 py-1 bg-gray-400 text-white rounded hover:bg-blue-700">TẠO ĐỀ THI</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Section -->
+  <div id="registerSection" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg mt-4">
+    <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">TẠO TÀI KHOẢN</h2>
+    <div class="mb-4">
+      <label class="block font-semibold text-gray-700">Tên đăng nhập:</label>
+      <input id="reg-username" type="text" class="w-full border p-2 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nhập tên đăng nhập" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold text-gray-700">Mật khẩu:</label>
+      <input id="reg-password" type="password" class="w-full border p-2 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nhập mật khẩu" />
+    </div>
+    <button id="register-btn" onclick="registerUser()" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">TẠO MÃ QR</button>
+    <p id="reg-msg" class="text-center font-semibold mt-2 hidden"></p>
+    <div id="qrcode" class="mt-4 flex flex-col items-center"></div>
+  </div>
+
+ <!-- Shuffle Section -->
+<div id="shuffleSection" class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-4 hidden">
+  
+  <!-- TRỘN ĐỀ -->
+  <div class="p-4 rounded-lg mb-6" style="background-color: #e6f7ff; border: 1px solid #91d5ff;">
+    <h3 class="text-lg font-bold text-blue-700 mb-2">👩‍🏫 TRỘN ĐỀ</h3>
+    <textarea id="inputDeGoc" class="border border-gray-300 rounded p-2 w-full mb-3" placeholder="Dán đề gốc tại đây - tạo 24 đề"></textarea>
+    <button onclick="tronDe()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">🔁 Trộn đề & Tải về</button>
+    <p id="status" class="text-sm font-semibold mt-2 text-gray-700"></p>
+  </div>
+
+  <!-- SOẠN ĐỀ MẪU -->
+  <div class="p-4 rounded-lg" style="background-color: #fffbe6; border: 1px solid #ffe58f;">
+    <h2 class="text-xl font-bold text-orange-600 mb-3">👩‍🏫 SOẠN ĐỀ MẪU THEO CẤU TRÚC SAU</h2>
+    <pre style="background:#f4f4f4;padding:1em;border:1px solid #ccc;white-space:pre-wrap;border-radius:4px;">
+[
+  {
+    "noi_dung": "Câu 1. Hàm số nào sau đây là hàm số bậc hai?",
+    "lua_chon": {"A": "y = 2x + 3", "B": "y = x^2 + 2x + 1", "C": "y = 1/x", "D": "y = √x"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 2. Giá trị của biểu thức |−5| là bao nhiêu?",
+    "lua_chon": {"A": "5", "B": "−5", "C": "0", "D": "10"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 3. Phương trình nào sau đây có hai nghiệm phân biệt?",
+    "lua_chon": {"A": "x^2 - 4x + 4 = 0", "B": "x^2 + 1 = 0", "C": "x^2 - 5x + 6 = 0", "D": "x^2 = 0"},
+    "dap_an_dung": "C"
+  },
+  ........
+]
+    </pre>
+    <button onclick="copySample()" class="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">📋 Sao chép mẫu</button>
+  </div>
+</div>
+
+<script>
+  function copySample() {
+    const sample = `[
+  {
+    "noi_dung": "Câu 1. Hàm số nào sau đây là hàm số bậc hai?",
+    "lua_chon": {"A": "y = 2x + 3", "B": "y = x^2 + 2x + 1", "C": "y = 1/x", "D": "y = √x"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 2. Giá trị của biểu thức |−5| là bao nhiêu?",
+    "lua_chon": {"A": "5", "B": "−5", "C": "0", "D": "10"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 3. Phương trình nào sau đây có hai nghiệm phân biệt?",
+    "lua_chon": {"A": "x^2 - 4x + 4 = 0", "B": "x^2 + 1 = 0", "C": "x^2 - 5x + 6 = 0", "D": "x^2 = 0"},
+    "dap_an_dung": "C"
+  },
+  ........
+]`;
+    navigator.clipboard.writeText(sample).then(() => alert("📋 Mẫu đề đã được sao chép!"));
+  }
+</script>
+
+
+  <footer class="text-center text-sm text-red-600 font-bold mt-8 mb-4">
+    Bản quyền © 2025 - PHẠM HUY TUÂN - ĐT: 0389897989
+  </footer>
+
+  <script>
+    const API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://127.0.0.1:5000"
+      : "https://xuka.com.vn";
+
+    const MASTER_PASSPHRASE = 'thay-bang-chuoi-bi-mat';
+    const te = new TextEncoder();
+    const td = new TextDecoder();
+
+    async function deriveAesKey(passphrase, salt) {
+      const keyMaterial = await crypto.subtle.importKey(
+        'raw', te.encode(passphrase),
+        { name: 'PBKDF2' },
+        false, ['deriveKey']
+      );
+      return crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+        keyMaterial, { name: 'AES-GCM', length: 256 },
+        false, ['encrypt', 'decrypt']
+      );
+    }
+
+    function u8ToB64(uint8) { return btoa(String.fromCharCode(...uint8)); }
+    function b64ToU8(b64) { return new Uint8Array([...atob(b64)].map(c => c.charCodeAt(0))); }
+
+    async function encryptWithPassphrase(plaintext, passphrase) {
+      const salt = crypto.getRandomValues(new Uint8Array(16));
+      const iv   = crypto.getRandomValues(new Uint8Array(12));
+      const key  = await deriveAesKey(passphrase, salt);
+      const cipherbuf = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, te.encode(plaintext));
+      return { salt: u8ToB64(salt), iv: u8ToB64(iv), data: u8ToB64(new Uint8Array(cipherbuf)) };
+    }
+
+    function showTab(tab) {
+      document.getElementById('registerSection').classList.add('hidden');
+      document.getElementById('shuffleSection').classList.add('hidden');
+      document.getElementById('tabRegister').classList.remove('bg-blue-600');
+      document.getElementById('tabShuffle').classList.remove('bg-blue-600');
+      document.getElementById('tabRegister').classList.add('bg-gray-400');
+      document.getElementById('tabShuffle').classList.add('bg-gray-400');
+      if (tab === 'register') {
+        document.getElementById('registerSection').classList.remove('hidden');
+        document.getElementById('tabRegister').classList.add('bg-blue-600');
+      } else {
+        document.getElementById('shuffleSection').classList.remove('hidden');
+        document.getElementById('tabShuffle').classList.add('bg-blue-600');
+      }
+    }
+
+    // --- Đăng ký & QR ---
+    async function registerUser() {
+      const username = document.getElementById('reg-username').value.trim();
+      const password = document.getElementById('reg-password').value.trim();
+      const msg = document.getElementById('reg-msg');
+      const btn = document.getElementById('register-btn');
+      const qrContainer = document.getElementById('qrcode');
+      qrContainer.innerHTML = '';
+      msg.classList.add('hidden');
+      if (!username || !password) {
+        msg.classList.remove('hidden');
+        msg.innerText = 'Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!';
+        msg.className = 'text-red-600 text-center font-semibold mt-2';
+        return;
+      }
+      btn.disabled = true;
+      btn.innerText = 'Đang xử lý...';
+      try {
+        const res = await fetch(`${API_BASE}/api/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (!res.ok || data.status !== 'success') throw new Error(data.msg || 'Đăng ký thất bại!');
+        const encQR = await encryptWithPassphrase(JSON.stringify({ username, password }), MASTER_PASSPHRASE);
+        const qrText = `v1.${encQR.salt}.${encQR.iv}.${encQR.data}`;
+        msg.classList.remove('hidden');
+        msg.className = 'text-green-600 text-center font-semibold mt-2';
+        msg.innerText = 'Đăng ký thành công! Đang tạo QR...';
+        new QRCode(qrContainer, { text: qrText, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.H });
+        setTimeout(() => {
+          const canvas = qrContainer.querySelector('canvas');
+          if (canvas) {
+            const downloadLink = document.createElement('a');
+            downloadLink.href = canvas.toDataURL('image/png');
+            downloadLink.download = `qr_${username.replace(/\s+/g, '_')}.png`;
+            downloadLink.className = 'mt-4 inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition';
+            downloadLink.innerText = '⬇ Tải mã QR';
+            qrContainer.appendChild(downloadLink);
+          }
+        }, 150);
+      } catch (error) {
+        msg.classList.remove('hidden');
+        msg.className = 'text-red-600 text-center font-semibold mt-2';
+        msg.innerText = error.message || 'Lỗi kết nối server!';
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'TẠO MÃ QR';
+      }
+    }
+
+    // --- Trộn đề ---
+    async function tronDe() {
+      let deGoc;
+      try {
+        deGoc = JSON.parse(document.getElementById('inputDeGoc').value);
+        if (!Array.isArray(deGoc)) throw new Error('Dữ liệu không đúng!');
+      } catch (e) {
+        document.getElementById('status').textContent = '❌ Lỗi JSON: ' + e.message;
+        return;
+      }
+      const status = document.getElementById('status');
+      status.textContent = '⏳ Đang trộn và tạo file ZIP...';
+      const allTests = [];
+      for (let i = 1; i <= 24; i++) {
+        const deTron = JSON.parse(JSON.stringify(deGoc));
+        shuffleArray(deTron);
+        deTron.forEach((cau, index) => {
+          const dapAnCu = cau.lua_chon[cau.dap_an_dung];
+          const luaChonArray = Object.entries(cau.lua_chon);
+          shuffleArray(luaChonArray);
+          const newLuaChon = {};
+          let newDapAn = '';
+          const keys = ['A', 'B', 'C', 'D'];
+          luaChonArray.forEach(([_, val], idx) => {
+            newLuaChon[keys[idx]] = val;
+            if (val === dapAnCu) newDapAn = keys[idx];
+          });
+          const noiDungGoc = cau.noi_dung.replace(/^Câu\s*\d+[:.]\s*/, '').trim();
+          cau.noi_dung = `Câu ${index + 1}: ${noiDungGoc}`;
+          cau.lua_chon = newLuaChon;
+          cau.dap_an_dung = newDapAn;
+        });
+        allTests.push({ de_so: i, noi_dung_de: deTron });
+      }
+      const zip = new JSZip();
+      allTests.forEach(test => {
+        zip.file(`de_${test.de_so.toString().padStart(2, '0')}.json`, JSON.stringify(test.noi_dung_de, null, 2));
+      });
+      try {
+        const blob = await zip.generateAsync({ type: 'blob' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'de_thi_24.zip';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        status.textContent = '✅ Đã trộn và tải file ZIP về thành công!';
+      } catch (err) {
+        status.textContent = '❌ Lỗi khi tạo file ZIP: ' + err.message;
+      }
+    }
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+Họ tên: PHẠM HUY TUÂN
+Số báo danh: 123487779789
+Ngày sinh: 2025-07-23
+Mã đề: 111
+Điểm: 1.50/10
+
+Chi tiết:
+Câu 1: Question 1: What is the formula for gravitational force?
+  → Đã chọn: A | Đúng: B ✗
+
+Câu 2: Question 2: What is the SI unit of force?
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
+
+Câu 3: Question 3: What is Ohm’s law?
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
+
+Câu 4: Question 4: Which of these is a scalar quantity?
+  → Đã chọn: (chưa chọn) | Đúng: D ✗
+
+Câu 5: Question 5: What does 'g' represent in physics?
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
+
+Câu 6: Question 6: Which law states that 'every action has an equal and opposite reaction'?
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
+
+Câu 7: Question 7: What is the SI unit of work?
+  → Đã chọn: (chưa chọn) | Đúng: B ✗
+
+Câu 8: Question 8: What is measured in Ohms?
+  → Đã chọn: C | Đúng: C ✓
+
+Câu 9: Question 9: Which device measures voltage?
+  → Đã chọn: (chưa chọn) | Đúng: B ✗
+
+Câu 10: Question 10: What is the formula for kinetic energy?
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
+
+Câu 11: Question 11: What type of heat transfer involves fluid motion?
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
+
+Câu 12: Question 12: Which instrument measures pressure?
+  → Đã chọn: (chưa chọn) | Đúng: B ✗
+
+Câu 13: Question 13: Frequency is measured in which unit?
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
+
+Câu 14: Question 14: Which formula represents conservation of energy?
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
+
+Câu 15: Question 15: Which lens converges light rays?
+  → Đã chọn: (chưa chọn) | Đúng: B ✗
+
+Câu 16: Question 16: What is the process of liquid turning into gas called?
+  → Đã chọn: B | Đúng: B ✓
+
+Câu 17: Question 17: Which quantity is a vector?
+  → Đã chọn: (chưa chọn) | Đúng: C ✗
+
+Câu 18: Question 18: What formula represents Archimedes' principle?
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
+
+Câu 19: Question 19: What is the formula for pressure?
+  → Đã chọn: (chưa chọn) | Đúng: A ✗
+
+Câu 20: Question 20: Who discovered the law of universal gravitation?
+  → Đã chọn: B | Đúng: B ✓

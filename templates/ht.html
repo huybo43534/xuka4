@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xuka.com.vn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      background-image: url("https://raw.githubusercontent.com/huybo43534/xuka4/main/h.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+    .banner {
+      background-color:#87CEFA;
+      color:#FF3300;
+      padding: 20px;
+      text-align: center;
+      font-size: 25px;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: red;
+    }
+  </style>
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Banner -->
+  <div class="banner">
+    <h1>
+      <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" class="w-11 h-11 inline-block">
+      <span style="font-size: 30px; font-weight: bold;">XUKA 4.0</span>
+      <span style="font-size: 16px; color: yellow; font-weight: bold; margin-left: 10px;">xuka.com.vn</span>
+      <br>
+      <span style="font-size: 16px; font-weight: bold;">PHẦN MỀM TỔ CHỨC CÁC KỲ THI - KIỂM TRA</span>
+    </h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="bg-yellow-300 py-1">
+    <div class="flex items-center space-x-2 px-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1024px-Flag_of_Vietnam.svg.png" alt="VN Flag" class="h-6 w-8">
+      <span class="text-blue-700 font-bold text-sm">TRƯỜNG THPT PHƯỚC LONG - ĐỒNG NAI</span>
+    </div>
+  </nav>
+
+  <!-- QR Login -->
+  <div id="qr-login" class="max-w-md mx-auto bg-white p-6 rounded shadow mt-2">
+    <center>
+      <h1 class="animate-pulse text-red-3xl font-bold text-pink-500">QUÉT MÃ QR</h1>
+    </center>
+    <div id="reader" class="mx-auto" style="width: 90%; max-width: 300px;"></div>
+    <p id="qr-error" class="text-red-600 mt-2 font-semibold hidden">QR không hợp lệ!</p>
+  </div>
+
+  <!-- Button group -->
+  <div id="button-group" class="flex flex-wrap justify-center gap-4 mb-10 mt-2">
+    <a id="btn-tao-de" href="/tronde" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Quản trị</a>
+    <a id="btn-danh-gia" href="/xuka" class="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">Đánh giá</a>
+    <a id="btn-huong-dan" href="/huongdan" class="bg-yellow-500 text-white px-6 py-3 rounded-lg shadow hover:bg-yellow-600 transition">Hướng dẫn</a>
+  </div>
+
+  <!-- Account Login -->
+  <div id="account-login" class="max-w-md mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4">Đăng Nhập Tài Khoản</h1>
+    <div class="mb-4">
+      <label class="block font-semibold">Tên đăng nhập:</label>
+      <input id="username" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Mật khẩu:</label>
+      <input id="password" type="password" class="w-full border p-2" />
+    </div>
+    <button onclick="checkLogin()" class="bg-blue-600 text-white px-4 py-2 rounded">Đăng nhập</button>
+    <p id="login-error" class="text-red-600 mt-2 font-semibold hidden">Sai tài khoản hoặc mật khẩu!</p>
+  </div>
+
+  <!-- Student Info -->
+  <div id="login-form" class="max-w-xl mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4">Thông Tin Thí Sinh</h1>
+    <div class="mb-4">
+      <label class="block font-semibold">Họ và tên:</label>
+      <input id="hoten" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Số báo danh:</label>
+      <input id="sbd" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Ngày sinh:</label>
+      <input id="ngaysinh" type="date" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Mã đề:</label>
+      <select id="made" class="w-full border p-2">
+        <option value="">-- Chọn mã đề --</option>
+      </select>
+    </div>
+    <button onclick="startExam()" class="bg-green-600 text-white px-4 py-2 rounded">Bắt đầu thi</button>
+  </div>
+
+  <!-- Exam -->
+  <div id="exam-container" class="max-w-3xl mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4 text-center">BÀI THI TRẮC NGHIỆM</h1>
+    <p id="countdown" class="text-red-600 font-bold mb-4">Thời gian: 60:00</p>
+    <div id="questions" class="space-y-4 mb-6"></div>
+    <button onclick="submitExam()" class="bg-blue-600 text-white px-4 py-2 rounded">Nộp bài</button>
+    <p id="result" class="mt-4 text-green-600 font-bold"></p>
+  </div>
+
+  <!-- Result -->
+  <div id="result-container" class="max-w-2xl mx-auto p-6 bg-white rounded shadow mt-10 hidden"></div>
+
+  <footer class="text-center text-sm text-red-600 font-bold mt-8">
+    Bản quyền © 2025 - PHẠM HUY TUÂN - ĐT : 0389897989
+  </footer>
+
+  <script>
+    const API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://127.0.0.1:5000"
+      : "https://xuka.com.vn";
+
+    const MASTER_PASSPHRASE = "thay-bang-chuoi-bi-mat"; 
+    const te = new TextEncoder();
+    const td = new TextDecoder();
+
+    function b64ToU8(b64) {
+      return new Uint8Array([...atob(b64)].map(c => c.charCodeAt(0)));
+    }
+
+    async function deriveAesKey(passphrase, salt) {
+      const keyMaterial = await crypto.subtle.importKey(
+        'raw',
+        te.encode(passphrase),
+        { name: 'PBKDF2' },
+        false,
+        ['deriveKey']
+      );
+      return crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+        keyMaterial,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['encrypt', 'decrypt']
+      );
+    }
+
+    async function decryptWithPassphrase(qrText, passphrase) {
+      const parts = qrText.split(".");
+      if (parts.length !== 4 || parts[0] !== "v1") throw new Error("QR không hợp lệ!");
+      const salt = b64ToU8(parts[1]);
+      const iv = b64ToU8(parts[2]);
+      const cipher = b64ToU8(parts[3]);
+      const key = await deriveAesKey(passphrase, salt);
+      const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, cipher);
+      return td.decode(plainBuf);
+    }
+
+    for (let i = 101; i <= 124; i++) {
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = i;
+      document.getElementById("made").appendChild(opt);
+    }
+
+    const qrScanner = new Html5Qrcode("reader");
+    qrScanner.start({ facingMode: "environment" }, { fps: 10, qrbox: 250 }, (decoded) => {
+      decryptWithPassphrase(decoded, MASTER_PASSPHRASE)
+        .then(() => {
+          qrScanner.stop().then(() => {
+            document.getElementById('qr-login').classList.add('hidden');
+            document.getElementById('account-login').classList.remove('hidden');
+            document.getElementById('button-group').classList.add('hidden');
+          });
+        })
+        .catch(() => {
+          document.getElementById('qr-error').classList.remove('hidden');
+        });
+    });
+
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          document.getElementById('account-login').classList.add('hidden');
+          document.getElementById('login-form').classList.remove('hidden');
+        } else {
+          document.getElementById('login-error').classList.remove('hidden');
+        }
+      })
+      .catch(err => {
+        console.error("Lỗi API login:", err);
+        alert("Không thể kết nối server!");
+      });
+    }
+
+    function updateCountdown() {
+      const m = Math.floor(time / 60).toString().padStart(2, '0');
+      const s = (time % 60).toString().padStart(2, '0');
+      document.getElementById("countdown").innerText = `Thời gian: ${m}:${s}`;
+      if (time <= 0) {
+        clearInterval(timer);
+        submitExam();
+      }
+      time--;
+      localStorage.setItem("savedTime", time);
+    }
+
+    function startExam() {
+      const name = document.getElementById('hoten').value.trim();
+      const sbd = document.getElementById('sbd').value.trim();
+      const dob = document.getElementById("ngaysinh").value;
+      const made = document.getElementById('made').value;
+      if (!name || !sbd || !dob || !made) {
+        return alert("Vui lòng nhập đầy đủ Họ tên, SBD, Ngày sinh và Mã đề!");
+      }
+      document.getElementById("login-form").classList.add("hidden");
+      document.getElementById("exam-container").classList.remove("hidden");
+
+      const savedTime = localStorage.getItem("savedTime");
+      time = savedTime ? parseInt(savedTime) : 3600;
+
+      timer = setInterval(updateCountdown, 1000);
+
+      fetch(`${API_BASE}/questions?made=${made}`)
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(data => {
+          if (!Array.isArray(data)) throw new Error("Dữ liệu đề thi không hợp lệ");
+          questionData = data;
+          const questionsDiv = document.getElementById("questions");
+          questionsDiv.innerHTML = "";
+          questionData.forEach((q, i) => {
+            const options = Object.entries(q.lua_chon).map(([k, v]) =>
+              `<option value="${k}">${k}. ${v}</option>`).join("");
+            const div = document.createElement('div');
+            div.innerHTML = `
+              <label class="block font-semibold">Câu ${i + 1}: ${q.noi_dung}</label>
+              <select id="q${i}" class="border p-2 w-full">
+                <option value="">-- Chọn --</option>
+                ${options}
+              </select>`;
+            questionsDiv.appendChild(div);
+          });
+        })
+        .catch(() => alert("Không thể tải file đề thi."));
+    }
+
+    function clearTempStorage() {
+      localStorage.removeItem("savedAnswers");
+      localStorage.removeItem("hoten");
+      localStorage.removeItem("made");
+      localStorage.removeItem("savedTime");
+    }
+
+    function submitExam() {
+      clearInterval(timer);
+      const name = document.getElementById('hoten').value.trim();
+      const made = document.getElementById('made').value;
+      const sbd = document.getElementById('sbd').value.trim();
+      const dob = document.getElementById("ngaysinh").value;
+
+      const answers = [];
+      let score = 0;
+      questionData.forEach((q, i) => {
+        const select = document.getElementById(`q${i}`);
+        const selected = select ? select.value : "";
+        const correct = q.dap_an_dung;
+        const isCorrect = selected === correct;
+        if (isCorrect) score++;
+        answers.push({
+          cau: i + 1,
+          noi_dung: q.noi_dung,
+          da_chon: selected || "(chưa chọn)",
+          dung_chinh_xac: correct,
+          dung: isCorrect
+        });
+      });
+
+      const finalScore = (score / questionData.length * 10).toFixed(2);
+      fetch(`${API_BASE}/save_result`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          hoten: name,
+          sbd: sbd,
+          ngaysinh: dob,
+          made: made,
+          diem: finalScore,
+          answers: answers
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "saved") {
+          clearTempStorage();
+          const now = new Date();
+          const formattedDate = now.toLocaleString("vi-VN", {
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+          });
+
+          let fileContent = `KẾT QUẢ BÀI THI\n`;
+          fileContent += `Họ tên: ${name}\nSBD: ${sbd}\nNgày sinh: ${dob}\nMã đề: ${made}\nĐiểm: ${finalScore}/10\n`;
+          fileContent += `Nộp lúc: ${formattedDate}\n\n`;
+          answers.forEach(ans => {
+            fileContent += `Câu ${ans.cau}: ${ans.noi_dung}\n`;
+            fileContent += `  Đáp án đúng: ${ans.dung_chinh_xac}\n`;
+            fileContent += `  Bạn chọn: ${ans.da_chon} ${ans.dung ? "- ĐÚNG" : "- SAI"}\n\n`;
+          });
+
+          const header = `<html xmlns:o='urn:schemas-microsoft-com:office:office'
+                  xmlns:w='urn:schemas-microsoft-com:office:word'
+                  xmlns='http://www.w3.org/TR/REC-html40'>
+            <head><meta charset='utf-8'><title>Kết quả</title></head><body>`;
+          const footer = "</body></html>";
+          const wordContent = header + fileContent.replace(/\n/g, "<br>") + footer;
+          const blob = new Blob(['\ufeff', wordContent], { type: 'application/msword' });
+          const url = URL.createObjectURL(blob);
+          const fileName = `KQ_${name.replace(/\s+/g, "_")}_${made}.doc`;
+
+          const resultDiv = document.getElementById("result-container");
+          resultDiv.classList.remove("hidden");
+          resultDiv.innerHTML = `
+            <h1 class="text-2xl font-bold text-green-600 mb-4">✅ KẾT QUẢ BÀI THI !</h1>
+            <p class="text-sm text-gray-500 mb-4">🕒 Nộp lúc: ${formattedDate}</p>
+            <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded mb-4">${fileContent}</pre>
+            <div class="flex gap-4">
+              <a href="${url}" download="${fileName}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                ⬇️ Tải kết quả .Doc
+              </a>
+              <button onclick="downloadPDF()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+                ⬇️ Tải kết quả .PDF
+              </button>
+            </div>
+          `;
+          document.getElementById("exam-container").classList.add("hidden");
+        } else {
+          alert("❌ Lỗi khi lưu kết quả!");
+        }
+      })
+      .catch(err => {
+        console.error("Lỗi khi gửi dữ liệu:", err);
+        alert("❌ Đã xảy ra lỗi khi nộp bài!");
+      });
+    }
+
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const text = document.querySelector("#result-container pre").innerText;
+      const splitText = doc.splitTextToSize(text, 180);
+      doc.setFont("Times", "Normal");
+      doc.setFontSize(12);
+      doc.text(splitText, 10, 10);
+      const pdfName = `KQ_${document.getElementById('hoten').value.replace(/\s+/g, "_")}_${document.getElementById('made').value}.pdf`;
+      doc.save(pdfName);
+    }
+  </script>
+</body>
+</html>
