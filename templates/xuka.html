@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XUKA 4.0 - Đánh giá phần mềm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url("") center/cover no-repeat;
+      min-height: 100vh;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: monospace;
+      margin-bottom: 12px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <div class="fixed top-0 left-0 right-0 bg-[#87CEFA] shadow-md z-50">
+    <div class="flex justify-between items-center px-4 py-3">
+      <h1 class="text-[#FF3300] text-2xl font-bold flex items-center">
+        <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" class="w-8 h-8 inline-block mr-2">
+        XUKA 4.0
+        <span class="text-yellow-400 text-sm ml-2">xuka.com.vn</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-4xl mx-auto p-6 space-y-6 mt-20">
+    <h1 class="text-3xl font-bold text-center text-blue-700">ĐÁNH GIÁ PHẦN MỀM XUKA 4.0</h1>
+
+    <!-- 1. Tổng quan -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">1. Tổng quan</h2>
+      <ul class="list-disc list-inside">
+        <li><strong>Tên phần mềm:</strong> XUKA 4.0</li>
+        <li><strong>Chức năng chính:</strong>
+          <ul class="list-disc list-inside ml-5">
+            <li>Đăng nhập bằng mã QR hoặc tài khoản</li>
+            <li>Thi trắc nghiệm theo mã đề</li>
+            <li>Tự động chấm điểm, hiển thị kết quả</li>
+            <li>Tải kết quả về máy, lưu lên server</li>
+            <li>Ngăn gian lận thi cử</li>
+          </ul>
+        </li>
+        <li><strong>Đối tượng sử dụng:</strong> Học sinh THPT – Giáo viên</li>
+        <li><strong>Công nghệ:</strong> HTML, CSS (Tailwind), JavaScript, html5-qrcode, backend API</li>
+        <li><strong>Tương thích:</strong> Chrome, Edge, Firefox (máy tính)</li>
+      </ul>
+    </section>
+     <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/x.jpg" class="w-[850px] h-[400px] inline-block">
+    <!-- 2. Đánh giá chi tiết -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">2. Đánh giá chi tiết</h2>
+
+      <h3 class="font-bold mt-4 mb-1">⚙️ Tính năng (9/10)</h3>
+      <table class="table-auto w-full text-sm border border-gray-300">
+        <thead class="bg-gray-200">
+          <tr><th class="border p-2 text-left">Hạng mục</th><th class="border p-2 text-left">Đánh giá</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="border p-2">Thi trắc nghiệm theo mã đề</td><td class="border p-2">✅ Có nhiều mã đề, chọn lọc ngẫu nhiên</td></tr>
+          <tr><td class="border p-2">Tự động chấm điểm</td><td class="border p-2">✅ Chính xác, theo đáp án</td></tr>
+          <tr><td class="border p-2">QR Login</td><td class="border p-2">✅ Hiện đại, tiện dụng</td></tr>
+          <tr><td class="border p-2">Webcam Login</td><td class="border p-2">✅ Nhận diện khuôn mặt, hiện đại, tiện dụng trong bản Xuka 4.3</td></tr>
+          <tr><td class="border p-2">Lưu kết quả</td><td class="border p-2">✅ Gửi server + tải file .txt</td></tr>
+          <tr><td class="border p-2">Ngăn gian lận</td><td class="border p-2">✅ Chặn F12, Ctrl+C, chuyển tab, Ngắt kết nối mạng khi thi, ghi hinh trong quá trình làm bài</td></tr>
+          <tr><td class="border p-2">Lưu tạm, khi mất điện tiếp tục làm bài</td><td class="border p-2">✅ Dùng localStorage</td></tr>
+          <tr><td class="border p-2">Xuất PDF</td><td class="border p-2">✅ Có .txt, Word, Pdf</td></tr>
+          <tr><td class="border p-2">Quản lý người dùng</td><td class="border p-2">✅ Phân quyền quản trị, người dùng</td></tr>
+          <tr><td class="border p-2">Thống kê kết quả</td><td class="border p-2">✅ Thống kê điểm, biểu đồ</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="font-bold mt-4 mb-1">🎨 Giao diện người dùng (8/10)</h3>
+      <ul class="list-disc list-inside ml-4">
+        <li>Ưu điểm: Giao diện rõ ràng, hỗ trợ Tailwind, hình nền đẹp</li>
+        <li>Nhược điểm: Thiếu responsive mobile, font và banner cần cải thiện</li>
+      </ul>
+
+      <h3 class="font-bold mt-4 mb-1">🚀 Hiệu suất (9/10)</h3>
+      <ul class="list-disc list-inside ml-4">
+        <li>Load nhanh, JS thuần</li>
+        <li>Dữ liệu xử lý hợp lý</li>
+        <li>Không có bug lớn</li>
+      </ul>
+
+      <h3 class="font-bold mt-4 mb-1">🔐 Bảo mật (8/10)</h3>
+      <ul class="list-disc list-inside ml-4">
+        <li>Ưu điểm: Ngăn phím tắt, không lưu mật khẩu</li>
+        <li>Nhược điểm: Thiếu xác thực</li>
+      </ul>
+
+      <h3 class="font-bold mt-4 mb-1">😃 Trải nghiệm người dùng (8.5/10)</h3>
+      <ul class="list-disc list-inside ml-4">
+        <li>Dễ dùng, rõ ràng, có thông báo lỗi</li>
+        <li>Thiếu xác nhận “Bạn chắc chắn nộp bài?”</li>
+      </ul>
+
+      <h3 class="font-bold mt-4 mb-1">📦 Khả năng mở rộng (8/10)</h3>
+      <ul class="list-disc list-inside ml-4">
+        <li>Dễ tích hợp JS framework</li>
+        <li>Dễ nâng cấp: phân quyền, PDF, thống kê</li>
+      </ul>
+
+      <h3 class="font-bold mt-4 mb-1">🔌 Tích hợp hệ thống (8.5/10)</h3>
+      <ul class="list-disc list-inside ml-4">
+        <li>Có API /login, /questions, /save_result</li>
+        <li>Chưa thấy DB rõ ràng.</li>
+      </ul>
+    </section>
+
+    <!-- Tổng điểm -->
+    <section class="border-t pt-4">
+      <h2 class="text-lg font-bold text-green-700 mb-2">📊 Tổng điểm đánh giá</h2>
+      <table class="table-auto w-full text-sm border border-gray-300">
+        <thead class="bg-gray-200">
+          <tr><th class="border p-2">Tiêu chí</th><th class="border p-2">Điểm</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="border p-2">Tính năng</td><td class="border p-2">9 / 10</td></tr>
+          <tr><td class="border p-2">Giao diện</td><td class="border p-2">8 / 10</td></tr>
+          <tr><td class="border p-2">Hiệu suất</td><td class="border p-2">9 / 10</td></tr>
+          <tr><td class="border p-2">Bảo mật</td><td class="border p-2">8/ 10</td></tr>
+          <tr><td class="border p-2">Trải nghiệm người dùng</td><td class="border p-2">8.5 / 10</td></tr>
+          <tr><td class="border p-2">Mở rộng</td><td class="border p-2">9 / 10</td></tr>
+          <tr><td class="border p-2">Tích hợp hệ thống</td><td class="border p-2">8.5/ 10</td></tr>
+        </tbody>
+        <tfoot class="font-bold bg-yellow-100">
+          <tr><td class="border p-2">Tổng cộng</td><td class="border p-2">60 / 70 → ~8.5 / 10. Trang web xuka.com.vn bảo mật, an toàn cho người dùng</td></tr>
+        </tfoot>
+      </table>
+    </section>
+    <img src="https://github.com/huybo43534/xuka4/raw/main/do.jpg" class="w-[850px] h-[600px] inline-block">
+    <!-- VIDEO -->
+    <section class="pt-6 border-t">
+      <h2 class="text-xl font-semibold mb-4 text-blue-700">🎥 Video Giới thiệu XUKA</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="aspect-w-16 aspect-h-9"><iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/FxIGbF24gkU" allowfullscreen></iframe></div>
+        <div class="aspect-w-16 aspect-h-9"><iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/jqwQPZ2uNyc" allowfullscreen></iframe></div>
+        <div class="aspect-w-16 aspect-h-9"><iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/l_4eslm2VEY" allowfullscreen></iframe></div>
+      </div>
+    </section>
+  </div>
+</body>
+<!-- Footer -->
+  <footer class="mt-10 py-4 text-center  text-gray-700 text-sm font-medium rounded ">
+  Bản quyền © 2025 <span class="font-bold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a>
+</footer>
+</html>

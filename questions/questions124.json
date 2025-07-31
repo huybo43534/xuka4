@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1. What is the largest continent by area?",
+    "lua_chon": {"A": "Africa", "B": "Asia", "C": "Europe", "D": "North America"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 2. Which country has the longest coastline in the world?",
+    "lua_chon": {"A": "Australia", "B": "Canada", "C": "Russia", "D": "USA"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 3. What is the capital city of Brazil?",
+    "lua_chon": {"A": "Rio de Janeiro", "B": "Brasília", "C": "São Paulo", "D": "Salvador"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 4. Which river is the longest in the world?",
+    "lua_chon": {"A": "Amazon", "B": "Yangtze", "C": "Nile", "D": "Mississippi"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 5. Mount Everest is located in which mountain range?",
+    "lua_chon": {"A": "Rockies", "B": "Andes", "C": "Alps", "D": "Himalayas"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 6. Which is the smallest country in the world by area?",
+    "lua_chon": {"A": "Monaco", "B": "San Marino", "C": "Vatican City", "D": "Liechtenstein"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 7. Which desert is the largest in the world?",
+    "lua_chon": {"A": "Sahara", "B": "Gobi", "C": "Kalahari", "D": "Antarctic Desert"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 8. Which U.S. state is the largest by area?",
+    "lua_chon": {"A": "Texas", "B": "California", "C": "Alaska", "D": "Montana"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 9. What is the capital of Australia?",
+    "lua_chon": {"A": "Sydney", "B": "Melbourne", "C": "Canberra", "D": "Brisbane"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 10. The Great Barrier Reef is located off the coast of which country?",
+    "lua_chon": {"A": "India", "B": "USA", "C": "Australia", "D": "South Africa"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 11. Which continent has the most countries?",
+    "lua_chon": {"A": "Asia", "B": "Africa", "C": "Europe", "D": "South America"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 12. What is the longest river in Asia?",
+    "lua_chon": {"A": "Mekong", "B": "Yangtze", "C": "Ganges", "D": "Yellow River"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 13. Which ocean is the deepest?",
+    "lua_chon": {"A": "Atlantic", "B": "Indian", "C": "Pacific", "D": "Arctic"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 14. Which country is both in Europe and Asia?",
+    "lua_chon": {"A": "Greece", "B": "Russia", "C": "Poland", "D": "Kazakhstan"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 15. What is the capital of Canada?",
+    "lua_chon": {"A": "Toronto", "B": "Ottawa", "C": "Vancouver", "D": "Montreal"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 16. What type of map shows elevation and terrain?",
+    "lua_chon": {"A": "Political map", "B": "Topographic map", "C": "Road map", "D": "Climate map"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 17. What is the name of the imaginary line dividing the Earth into the Northern and Southern Hemispheres?",
+    "lua_chon": {"A": "Prime Meridian", "B": "International Date Line", "C": "Equator", "D": "Tropic of Capricorn"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 18. What is the second most spoken language in the world?",
+    "lua_chon": {"A": "English", "B": "Mandarin", "C": "Hindi", "D": "Spanish"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 19. What is the name of the large desert in northern China and Mongolia?",
+    "lua_chon": {"A": "Karakum", "B": "Gobi", "C": "Thar", "D": "Taklamakan"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 20. What is the capital of Vietnam?",
+    "lua_chon": {"A": "Ho Chi Minh City", "B": "Hanoi", "C": "Da Nang", "D": "Hue"},
+    "dap_an_dung": "B"
+  }
+]

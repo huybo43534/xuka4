@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trộn đề thi XUKA</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+  
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: monospace;
+      margin-bottom: 12px;
+    }
+    button {
+      margin-right: 8px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <h2>👩‍🏫 ĐỀ GỐC </h2>
+  <textarea id="inputDeGoc" placeholder="Dán đề gốc tại đây - tạo 24 đề"></textarea>
+  <br>
+  <button onclick="luuDe()">💾 Lưu đề</button>
+  <button onclick="tronDe()">🔁 Trộn đề & Tải về</button>
+  <p id="status"></p>
+
+  <script>
+  
+    let deGoc = [];
+
+    function luuDe() {
+      try {
+        const input = document.getElementById('inputDeGoc').value;
+        const json = JSON.parse(input);
+        if (!Array.isArray(json)) throw new Error("Phải là mảng JSON");
+        deGoc = json;
+        document.getElementById('status').textContent = '✅ Đã lưu đề gốc thành công!';
+      } catch (e) {
+        document.getElementById('status').textContent = '❌ Lỗi JSON: ' + e.message;
+      }
+    }
+
+    async function tronDe() {
+      if (!Array.isArray(deGoc) || deGoc.length === 0) {
+        document.getElementById('status').textContent = '⚠️ Chưa có đề gốc!';
+        return;
+      }
+
+      const status = document.getElementById('status');
+      status.textContent = '⏳ Đang trộn và tạo file ZIP...';
+
+      const allTests = [];
+
+      for (let i = 1; i <= 24; i++) {
+        const deTron = JSON.parse(JSON.stringify(deGoc));
+        shuffleArray(deTron);
+
+        deTron.forEach((cau, index) => {
+          const dapAnCu = cau.lua_chon[cau.dap_an_dung];
+          const luaChonArray = Object.entries(cau.lua_chon);
+          shuffleArray(luaChonArray);
+
+          const newLuaChon = {};
+          let newDapAn = '';
+          const keys = ['A', 'B', 'C', 'D'];
+
+          luaChonArray.forEach(([_, val], idx) => {
+            newLuaChon[keys[idx]] = val;
+            if (val === dapAnCu) newDapAn = keys[idx];
+          });
+
+          const noiDungGoc = cau.noi_dung.replace(/^Câu\s*\d+[:.]\s*/, '').trim();
+          cau.noi_dung = `Câu ${index + 1}: ${noiDungGoc}`;
+          cau.lua_chon = newLuaChon;
+          cau.dap_an_dung = newDapAn;
+        });
+
+        allTests.push({ de_so: i, noi_dung_de: deTron });
+      }
+
+      // Nén thành .zip
+      const zip = new JSZip();
+      allTests.forEach(test => {
+        zip.file(`de_${test.de_so.toString().padStart(2, '0')}.json`, JSON.stringify(test.noi_dung_de, null, 2));
+      });
+
+      try {
+        const blob = await zip.generateAsync({ type: 'blob' });
+
+        // Tạo link tải về
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'de_thi_24.zip';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+
+        status.textContent = '✅ Đã trộn và tải file ZIP về thành công!';
+      } catch (err) {
+        status.textContent = '❌ Lỗi khi tạo file ZIP: ' + err.message;
+      }
+    }
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+  </script>
+</body>
+<h2>👩‍🏫 SOẠN ĐỀ MẪU THEO CẤU TRÚC SAU</h2>
+<pre style="background:#f4f4f4;padding:1em;border:1px solid #ccc;">
+[
+  {
+    "noi_dung": "Câu 1. Hàm số nào sau đây là hàm số bậc hai?",
+    "lua_chon": {"A": "y = 2x + 3", "B": "y = x^2 + 2x + 1", "C": "y = 1/x", "D": "y = √x"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 2. Giá trị của biểu thức |−5| là bao nhiêu?",
+    "lua_chon": {"A": "5", "B": "−5", "C": "0", "D": "10"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 3. Phương trình nào sau đây có hai nghiệm phân biệt?",
+    "lua_chon": {"A": "x^2 - 4x + 4 = 0", "B": "x^2 + 1 = 0", "C": "x^2 - 5x + 6 = 0", "D": "x^2 = 0"},
+    "dap_an_dung": "C"
+  },
+  ........
+]
+</pre>
+
+
+</html>

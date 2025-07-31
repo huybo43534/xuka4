@@ -1,0 +1,112 @@
+[
+  {
+    "noi_dung": "Question 1. Quelle est l’unité de base de la vie ?",
+    "lua_chon": {"A": "Atome", "B": "Tissu", "C": "Organe", "D": "Cellule"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 2. Quel est le rôle principal de l’ADN ?",
+    "lua_chon": {
+      "A": "Produire de l’énergie",
+      "B": "Stocker l’information génétique",
+      "C": "Transporter l’oxygène",
+      "D": "Combattre les infections"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 3. Quelle molécule est essentielle à la respiration cellulaire ?",
+    "lua_chon": {"A": "H2O", "B": "CO2", "C": "O2", "D": "Glucose"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 4. Où se produit la photosynthèse ?",
+    "lua_chon": {"A": "Mitochondrie", "B": "Chloroplaste", "C": "Noyau", "D": "Cytoplasme"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 5. Quel est le rôle des globules rouges ?",
+    "lua_chon": {"A": "Combattre les infections", "B": "Transporter l’oxygène", "C": "Produire des hormones", "D": "Filtrer le sang"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 6. Quel organe produit l’insuline ?",
+    "lua_chon": {"A": "Foie", "B": "Pancréas", "C": "Rate", "D": "Rein"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 7. Quelle est la fonction des ribosomes ?",
+    "lua_chon": {"A": "Synthèse des protéines", "B": "Production d’énergie", "C": "Stockage des graisses", "D": "Détoxification"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 8. Quelle structure contrôle les activités de la cellule ?",
+    "lua_chon": {"A": "Réticulum", "B": "Noyau", "C": "Membrane", "D": "Appareil de Golgi"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 9. Combien de chromosomes possède l’être humain ?",
+    "lua_chon": {"A": "23", "B": "46", "C": "22", "D": "48"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 10. Quel est l’organite responsable de la production d’énergie ?",
+    "lua_chon": {"A": "Lysosome", "B": "Noyau", "C": "Mitochondrie", "D": "Chloroplaste"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 11. Quelle est la fonction du système immunitaire ?",
+    "lua_chon": {
+      "A": "Digérer les aliments",
+      "B": "Transporter le sang",
+      "C": "Protéger contre les agents pathogènes",
+      "D": "Produire des globules rouges"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 12. Comment s’appelle le processus par lequel une cellule se divise ?",
+    "lua_chon": {"A": "Photosynthèse", "B": "Mitose", "C": "Méiose", "D": "Fusion"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 13. Quelle glande contrôle la croissance ?",
+    "lua_chon": {"A": "Hypophyse", "B": "Thyroïde", "C": "Surrénale", "D": "Pancréas"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 14. Quel est le rôle de la moelle osseuse ?",
+    "lua_chon": {"A": "Produire des hormones", "B": "Former des globules sanguins", "C": "Filtrer le sang", "D": "Stocker du calcium"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 15. Quel est l’organe principal du système respiratoire ?",
+    "lua_chon": {"A": "Cœur", "B": "Foie", "C": "Poumons", "D": "Rein"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 16. Quelle partie du cerveau contrôle l’équilibre ?",
+    "lua_chon": {"A": "Cerveau", "B": "Hypothalamus", "C": "Cervelet", "D": "Tronc cérébral"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 17. Quelle est la principale fonction des enzymes digestives ?",
+    "lua_chon": {"A": "Accélérer la digestion", "B": "Stocker l’énergie", "C": "Transporter les nutriments", "D": "Produire des hormones"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 18. Comment les plantes absorbent-elles l’eau ?",
+    "lua_chon": {"A": "Par les feuilles", "B": "Par les racines", "C": "Par la tige", "D": "Par les fleurs"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 19. Quel est le rôle du plasma sanguin ?",
+    "lua_chon": {"A": "Transporter les nutriments et hormones", "B": "Combattre les infections", "C": "Transporter l’oxygène", "D": "Produire des cellules"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 20. Quelle vitamine est produite par la peau sous l'effet du soleil ?",
+    "lua_chon": {"A": "Vitamine A", "B": "Vitamine C", "C": "Vitamine D", "D": "Vitamine B12"},
+    "dap_an_dung": "C"
+  }
+]

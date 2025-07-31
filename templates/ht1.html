@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xuka.com.vn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      margin: 0;
+      padding-top: 80px;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="fixed top-0 left-0 right-0 bg-[#87CEFA] shadow-md z-50">
+    <div class="flex justify-between items-center px-4 py-3">
+      <h1 class="text-[#FF3300] text-2xl font-bold">
+        <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" class="w-8 h-8 inline-block mr-2">
+        XUKA 4.0
+        <span class="text-yellow-400 text-sm ml-2">xuka.com.vn</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Login Section -->
+  <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg mt-4">
+    <h2 class="text-2xl font-bold text-center text-blue-600 mb-4">ĐĂNG NHẬP</h2>
+    <div class="mb-4">
+      <label class="block font-semibold text-gray-700">Tên đăng nhập:</label>
+      <input id="login-username" type="text" class="w-full border p-2 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nhập tên đăng nhập" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold text-gray-700">Mật khẩu:</label>
+      <input id="login-password" type="password" class="w-full border p-2 rounded mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nhập mật khẩu" />
+    </div>
+    <button id="login-btn" onclick="loginUser()" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">ĐĂNG NHẬP</button>
+    <p id="login-msg" class="text-center font-semibold mt-2 hidden"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-red-600 font-bold mt-8 mb-4">
+    Bản quyền © 2025 - PHẠM HUY TUÂN - ĐT: 0389897989
+  </footer>
+
+  <script>
+    const API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://127.0.0.1:5000"
+      : "https://xuka.com.vn";
+
+    // --- Đăng nhập ---
+    async function loginUser() {
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+      const msg = document.getElementById('login-msg');
+      const btn = document.getElementById('login-btn');
+
+      msg.classList.add('hidden');
+      msg.innerText = '';
+
+      if (!username || !password) {
+        msg.classList.remove('hidden');
+        msg.innerText = 'Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!';
+        msg.className = 'text-red-600 text-center font-semibold mt-2';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = 'Đang kiểm tra...';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await res.json();
+        if (!res.ok || data.status !== 'success') {
+          throw new Error(data.msg || 'Đăng nhập thất bại!');
+        }
+
+        msg.classList.remove('hidden');
+        msg.className = 'text-green-600 text-center font-semibold mt-2';
+        msg.innerText = '✅ Đăng nhập thành công!';
+
+        // Điều hướng sang trang thi (ví dụ exam.html)
+        setTimeout(() => {
+          window.location.href = "exam.html";
+        }, 1000);
+      } catch (error) {
+        console.error(error);
+        msg.classList.remove('hidden');
+        msg.className = 'text-red-600 text-center font-semibold mt-2';
+        msg.innerText = error.message || 'Lỗi kết nối server!';
+      } finally {
+        btn.disabled = false;
+        btn.innerText = 'ĐĂNG NHẬP';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Câu 1. Việt Nam có diện tích khoảng bao nhiêu km²?",
+    "lua_chon": {"A": "285.000 km²", "B": "331.212 km²", "C": "300.000 km²", "D": "350.000 km²"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 2. Tổng dân số Việt Nam năm 2023 khoảng 100 triệu người. Mật độ dân số trung bình là bao nhiêu người/km² nếu diện tích là 331.212 km²?",
+    "lua_chon": {"A": "302", "B": "313", "C": "331", "D": "350"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 3. Nếu tỉ lệ sinh là 1,6% và dân số năm trước là 98 triệu, thì số dân tăng thêm trong năm là?",
+    "lua_chon": {"A": "1,56 triệu", "B": "1,4 triệu", "C": "1,68 triệu", "D": "1,2 triệu"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 4. Một tỉnh có 1.000.000 dân, nếu 20% dân số sống ở đô thị, thì có bao nhiêu người sống ở nông thôn?",
+    "lua_chon": {"A": "200.000", "B": "800.000", "C": "600.000", "D": "900.000"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 5. Một huyện có diện tích 250 km² và dân số 125.000 người. Mật độ dân số là?",
+    "lua_chon": {"A": "500 người/km²", "B": "600 người/km²", "C": "550 người/km²", "D": "625 người/km²"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 6. Một cánh đồng có diện tích 120 ha, trồng lúa cho năng suất 60 tạ/ha. Sản lượng thu được là?",
+    "lua_chon": {"A": "72 tấn", "B": "720 tấn", "C": "702 tấn", "D": "600 tấn"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 7. Tỉ lệ thất nghiệp là 5% trên tổng số lao động là 50 triệu. Số người thất nghiệp là bao nhiêu?",
+    "lua_chon": {"A": "1 triệu", "B": "2 triệu", "C": "2,5 triệu", "D": "3 triệu"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 8. Một tỉnh xuất khẩu 5 tỷ USD và nhập khẩu 3 tỷ USD. Cán cân thương mại là?",
+    "lua_chon": {"A": "+2 tỷ USD", "B": "-2 tỷ USD", "C": "+8 tỷ USD", "D": "-8 tỷ USD"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 9. Một khu công nghiệp chiếm 120 ha đất. Nếu mỗi nhà máy cần 2 ha, xây được tối đa bao nhiêu nhà máy?",
+    "lua_chon": {"A": "50", "B": "60", "C": "70", "D": "80"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 10. Sản lượng cà phê cả nước năm 2022 là 1,8 triệu tấn. Nếu xuất khẩu chiếm 80%, thì lượng cà phê xuất khẩu là?",
+    "lua_chon": {"A": "1,2 triệu tấn", "B": "1,4 triệu tấn", "C": "1,44 triệu tấn", "D": "1,6 triệu tấn"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 11. Dân số đồng bằng sông Hồng là 22 triệu người, chiếm 22% dân số cả nước. Tổng dân số cả nước là?",
+    "lua_chon": {"A": "100 triệu", "B": "90 triệu", "C": "95 triệu", "D": "110 triệu"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 12. Một nhà máy tiêu thụ 5000 kWh điện/ngày. Trong một tháng 30 ngày, tiêu thụ bao nhiêu kWh?",
+    "lua_chon": {"A": "150.000", "B": "155.000", "C": "145.000", "D": "160.000"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 13. Một tỉnh có 400.000 ha rừng, nếu tăng 5% mỗi năm, thì sau 1 năm diện tích là bao nhiêu?",
+    "lua_chon": {"A": "420.000 ha", "B": "410.000 ha", "C": "415.000 ha", "D": "405.000 ha"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 14. Một khu dân cư mới có 50 tòa nhà, mỗi tòa có 20 tầng, mỗi tầng 4 căn hộ. Tổng số căn hộ là?",
+    "lua_chon": {"A": "4000", "B": "3000", "C": "5000", "D": "3500"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 15. Một tỉnh có sản lượng thủy sản là 1,2 triệu tấn, chiếm 15% cả nước. Sản lượng cả nước là?",
+    "lua_chon": {"A": "6 triệu tấn", "B": "7 triệu tấn", "C": "8 triệu tấn", "D": "9 triệu tấn"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 16. Một con sông dài 500 km, nếu chảy qua 5 tỉnh với chiều dài bằng nhau, mỗi tỉnh dài bao nhiêu km?",
+    "lua_chon": {"A": "50 km", "B": "100 km", "C": "125 km", "D": "150 km"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 17. Nếu nhiệt độ trung bình năm là 25°C, và biên độ nhiệt là 10°C, nhiệt độ thấp nhất là?",
+    "lua_chon": {"A": "15°C", "B": "10°C", "C": "20°C", "D": "12°C"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 18. Một cảng biển có thể tiếp nhận 1.000.000 tấn hàng/năm. Nếu mỗi tàu chở 25.000 tấn, thì cần bao nhiêu tàu?",
+    "lua_chon": {"A": "40", "B": "25", "C": "50", "D": "60"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 19. Một khu du lịch thu hút 300.000 lượt khách/năm, trung bình mỗi khách chi 2 triệu đồng. Tổng thu là?",
+    "lua_chon": {"A": "600 tỷ", "B": "500 tỷ", "C": "550 tỷ", "D": "650 tỷ"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 20. Một thành phố tăng dân số 2% mỗi năm. Nếu dân số hiện tại là 2 triệu, sau 1 năm là?",
+    "lua_chon": {"A": "2.040.000", "B": "2.020.000", "C": "2.200.000", "D": "2.100.000"},
+    "dap_an_dung": "B"
+  }
+]

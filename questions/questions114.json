@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1. Quelle est la formule de l'énergie cinétique ?",
+    "lua_chon": {"A": "E = mc", "B": "E = mv", "C": "E = 1/2mv²", "D": "E = mgh"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 2. Quelle est l’unité de la force dans le Système International ?",
+    "lua_chon": {"A": "Joule", "B": "Newton", "C": "Pascal", "D": "Watt"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 3. La loi d'Ohm est représentée par quelle équation ?",
+    "lua_chon": {"A": "P = IV", "B": "V = IR", "C": "F = ma", "D": "E = mc²"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 4. Quelle est l’accélération gravitationnelle sur Terre ?",
+    "lua_chon": {"A": "9,8 m/s²", "B": "10 m/s²", "C": "8,5 m/s²", "D": "9,2 m/s²"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 5. Quelle grandeur est une grandeur scalaire ?",
+    "lua_chon": {"A": "Vitesse", "B": "Force", "C": "Énergie", "D": "Accélération"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 6. Quel instrument mesure la tension électrique ?",
+    "lua_chon": {"A": "Ampèremètre", "B": "Voltmètre", "C": "Baromètre", "D": "Thermomètre"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 7. Le travail est nul si :",
+    "lua_chon": {"A": "La force est perpendiculaire au déplacement", "B": "La force est parallèle au déplacement", "C": "Il n’y a pas de déplacement", "D": "Les deux A et C"},
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Question 8. Quelle est la formule de la puissance électrique ?",
+    "lua_chon": {"A": "P = IV", "B": "P = I/R", "C": "P = V/I", "D": "P = IR"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 9. Quelle loi décrit l’action et la réaction ?",
+    "lua_chon": {"A": "1ère loi de Newton", "B": "2ème loi de Newton", "C": "3ème loi de Newton", "D": "Loi de Coulomb"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 10. Quelle est l’unité de la pression ?",
+    "lua_chon": {"A": "Newton", "B": "Pascal", "C": "Joule", "D": "Watt"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 11. La formule de l’énergie potentielle est :",
+    "lua_chon": {"A": "E = 1/2mv²", "B": "E = mgh", "C": "E = mc²", "D": "E = qV"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 12. Quel phénomène est lié à la dilatation thermique ?",
+    "lua_chon": {"A": "Variation de masse", "B": "Variation de volume", "C": "Variation de force", "D": "Variation de vitesse"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 13. Quelle est la fréquence d’un courant alternatif domestique en France ?",
+    "lua_chon": {"A": "50 Hz", "B": "60 Hz", "C": "100 Hz", "D": "220 Hz"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 14. La lumière se propage dans le vide à une vitesse de :",
+    "lua_chon": {"A": "3 × 10^6 m/s", "B": "3 × 10^8 m/s", "C": "3 × 10^5 m/s", "D": "3 × 10^7 m/s"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 15. Quelle est la formule du moment d’une force ?",
+    "lua_chon": {"A": "M = F × d", "B": "M = F/d", "C": "M = F × v", "D": "M = d/F"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 16. Le principe d’Archimède s’applique aux corps :",
+    "lua_chon": {"A": "Dans l'air", "B": "Dans l'eau", "C": "Dans le vide", "D": "Dans un champ magnétique"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 17. La résistance équivalente de deux résistances en série est :",
+    "lua_chon": {"A": "R1 × R2", "B": "R1 + R2", "C": "1/(R1 + R2)", "D": "R1 / R2"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 18. Le champ magnétique autour d’un fil parcouru par un courant est :",
+    "lua_chon": {"A": "Inexistant", "B": "Concentrique", "C": "Radial", "D": "Rectiligne"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 19. Quel est l’effet de la température sur la résistance d’un conducteur métallique ?",
+    "lua_chon": {"A": "Elle augmente", "B": "Elle diminue", "C": "Elle reste constante", "D": "Elle devient nulle"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 20. Une lentille convergente forme une image :",
+    "lua_chon": {"A": "Toujours virtuelle", "B": "Toujours réelle", "C": "Peut être réelle ou virtuelle", "D": "Toujours agrandie"},
+    "dap_an_dung": "C"
+  }
+]

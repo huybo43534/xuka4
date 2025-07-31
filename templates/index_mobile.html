@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XUKA 4.0</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- QR -->
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Nếu bạn render phía server (Flask/Jinja), giữ lại meta này -->
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  
+  <style>
+    body {
+      background-image: url("https://raw.githubusercontent.com/huybo43534/xuka4/main/h.png");
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+    .banner {
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 25px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%);  }
+    }
+    .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 10s linear infinite;
+    }
+    /* Nút tiện dùng */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 1px 2px rgba(0,0,0,.1);
+      transition: opacity .15s ease;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-blue   { background: #2563eb; }
+    .btn-green  { background: #16a34a; }
+    .btn-yellow { background: #eab308; color: #111; }
+    .input-text {
+      width: 100%; border: 1px solid #ccc; padding: .5rem .75rem; border-radius: .375rem;
+    }
+    .card {
+      background: #fff; border-radius: .5rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); padding: 1.5rem; margin-top: .5rem;
+    }
+    .max-w-md  { max-width: 28rem;  margin: 0 auto; }
+    .max-w-xl  { max-width: 36rem;  margin: 0 auto; }
+    .max-w-3xl { max-width: 48rem;  margin: 0 auto; }
+  </style>
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Banner -->
+  <div class="banner">
+    <h1>
+      <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" class="w-11 h-11 inline-block" alt="Xuka">
+      <span class="text-3xl font-bold">XUKA 4.0</span>
+      <span class="text-lg font-bold ml-2 text-yellow-300">xuka.com.vn</span><br>
+      <span class="text-base font-semibold">PHẦN MỀM TỔ CHỨC CÁC KỲ THI - KIỂM TRA</span>
+    </h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="bg-yellow-300 py-1 shadow-md">
+    <div class="flex items-center px-4 space-x-3">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1024px-Flag_of_Vietnam.svg.png"
+           alt="VN Flag" class="h-6 w-8 rounded-sm shadow">
+      <div class="w-[800px] h-8 flex items-center">
+        <span class="text-blue-500 font-bold text-sm whitespace-nowrap">
+  TRƯỜNG THPT PHƯỚC LONG - ĐỒNG NAI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white-700 text-lg">★★★★★</span>
+
+</span>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- QR + 2 bên bài viết hiển thị DỌC -->
+ <div class="flex flex-col md:flex-row justify-center items-start gap-14 px-14 mt-8">
+
+    <!-- Cột trái: 2 khối tin tức xếp dọc -->
+    <div id="left-column" class="flex flex-col gap-2 w-full md:w-1/4">
+      <!-- Bài viết trái 1 -->
+      <div class="bg-white p-5 rounded-xl shadow-lg">
+        <h2 class="text-xl font-bold text-blue-800 border-b pb-2 mb-3">📰 Tin mới từ VnExpress</h2>
+        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <li>
+            🌍<a href="https://vnexpress.net/the-gioi" target="_blank" class="text-blue-600 font-semibold hover:underline">
+              Tin tức thế giới
+            </a><br>
+            <span class="text-gray-500">Tổng hợp nhanh những diễn biến chính trị, kinh tế, xã hội nổi bật trên thế giới.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-lg">
+        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <li>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
+            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
+              Dành cho quảng cáo
+            </a><br>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/bo.jpg" alt="icon" class="inline w-80 h-12 mr-1">
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-lg">
+        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <li>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
+            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
+              Dành cho quảng cáo
+            </a><br>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/k.jpg" alt="icon" class="inline w-80 h-12 mr-1">
+          </li>
+        </ul>
+      </div>      
+    </div>
+
+    <!-- Cột giữa: QR Login và nhóm nút xếp dọc -->
+    <div id="main-column" class="flex flex-col gap-4 w-full max-w-md mx-auto">
+      <!-- QR Login -->
+      <div id="qr-login" class="bg-white p-6 rounded-xl shadow text-center">
+        <h1 class="text-1xl font-bold text-pink-500 mb-4">QUÉT MÃ QR</h1>
+        <div id="reader" class="mx-auto" style="width: 90%; max-width: 300px;"></div>
+        <p id="qr-error" class="text-red-600 mt-2 font-semibold hidden">QR không hợp lệ!</p>
+      </div>
+
+      <!-- Nhóm 3 nút nằm ngang -->
+      <div id="button-group" class="flex justify-center gap-4">
+        <a href="/tronde" 
+           class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold text-base 
+                  shadow-md shadow-blue-900/40 
+                  hover:shadow-lg hover:scale-105 
+                  active:scale-95 
+                  transition-transform duration-200 ease-out">
+           Quản trị
+        </a>
+        <a href="/xuka" 
+           class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-green-400 to-green-600 text-white font-semibold text-base 
+                  shadow-md shadow-green-900/40 
+                  hover:shadow-lg hover:scale-105 
+                  active:scale-95 
+                  transition-transform duration-200 ease-out">
+           Đánh giá
+        </a>
+        <a href="/huongdan" 
+           class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-semibold text-base 
+                  shadow-md shadow-yellow-900/40 
+                  hover:shadow-lg hover:scale-105 
+                  active:scale-95 
+                  transition-transform duration-200 ease-out">
+           Hướng dẫn
+        </a>
+      </div>
+    </div>
+
+    <!-- Cột phải: 2 khối thông báo xếp dọc -->
+    <div id="right-column" class="flex flex-col gap-2 w-full md:w-1/4">
+      <!-- Bài viết phải 1 -->
+      <div class="bg-white p-5 rounded-xl shadow-lg">
+        <h2 class="text-xl font-bold text-blue-800 border-b pb-2 mb-3">📰 SỞ GD&ĐT ĐÔNG NAI</h2>
+        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <li>
+            🌍 <a href="https://dnis.dongnai.gov.vn/" target="_blank" class="text-blue-600 font-semibold hover:underline">
+              Hệ thống văn bản
+            </a><br>
+            <span class="text-gray-500">Hệ thống văn bản chỉ đạo điều hành ngành GD&ĐT Đông Nai.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-lg">
+        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <li>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
+            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
+              Dành cho quảng cáo
+            </a><br>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/k.jpg" alt="icon" class="inline w-80 h-12 mr-1">
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow-lg">
+        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <li>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
+            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
+              Dành cho quảng cáo
+            </a><br>
+            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/bo.jpg" alt="icon" class="inline w-80 h-12 mr-1">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Account Login -->
+  <div id="account-login" class="max-w-md mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4">Đăng Nhập Tài Khoản</h1>
+    <div class="mb-4">
+      <label class="block font-semibold">Tên đăng nhập:</label>
+      <input id="username" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Mật khẩu:</label>
+      <input id="password" type="password" class="w-full border p-2" />
+    </div>
+    <button onclick="checkLogin()" class="bg-blue-600 text-white px-4 py-2 rounded">Đăng nhập</button>
+    <p id="login-error" class="text-red-600 mt-2 font-semibold hidden">Sai tài khoản hoặc mật khẩu!</p>
+  </div>
+
+  <!-- Student Info -->
+  <div id="login-form" class="max-w-xl mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4">Thông Tin Thí Sinh</h1>
+    <div class="mb-4">
+      <label class="block font-semibold">Họ và tên:</label>
+      <input id="hoten" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Số báo danh:</label>
+      <input id="sbd" type="text" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Ngày sinh:</label>
+      <input id="ngaysinh" type="date" class="w-full border p-2" />
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold">Mã đề:</label>
+      <select id="made" class="w-full border p-2">
+        <option value="">-- Chọn mã đề --</option>
+      </select>
+    </div>
+    <button onclick="startExam()" class="bg-green-600 text-white px-4 py-2 rounded">Bắt đầu thi</button>
+  </div>
+
+  <!-- Exam -->
+  <div id="exam-container" class="max-w-3xl mx-auto bg-white p-6 rounded shadow hidden">
+    <h1 class="text-2xl font-bold mb-4 text-center">BÀI THI TRẮC NGHIỆM</h1>
+    <p id="countdown" class="text-red-600 font-bold mb-4">Thời gian: 60:00</p>
+    <div id="questions" class="space-y-4 mb-6"></div>
+    <button onclick="submitExam()" class="bg-blue-600 text-white px-4 py-2 rounded">Nộp bài</button>
+    <p id="result" class="mt-4 text-green-600 font-bold"></p>
+  </div>
+
+  <!-- Result -->
+  <div id="result-container" class="max-w-2xl mx-auto p-6 bg-white rounded shadow mt-10 hidden"></div>
+  
+  <footer class="mt-10 py-4 text-center text-gray-700 text-sm font-medium rounded">
+    Bản quyền © 2025 <span class="font-bold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a>
+  </footer>
+
+  <script>
+    const API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+      ? "http://127.0.0.1:5000"
+      : "https://xuka.com.vn";
+
+    const MASTER_PASSPHRASE = "thay-bang-chuoi-bi-mat"; 
+    const te = new TextEncoder();
+    const td = new TextDecoder();
+
+    function b64ToU8(b64) {
+      return new Uint8Array([...atob(b64)].map(c => c.charCodeAt(0)));
+    }
+
+    async function deriveAesKey(passphrase, salt) {
+      const keyMaterial = await crypto.subtle.importKey(
+        'raw',
+        te.encode(passphrase),
+        { name: 'PBKDF2' },
+        false,
+        ['deriveKey']
+      );
+      return crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+        keyMaterial,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['encrypt', 'decrypt']
+      );
+    }
+
+    async function decryptWithPassphrase(qrText, passphrase) {
+      const parts = qrText.split(".");
+      if (parts.length !== 4 || parts[0] !== "v1") throw new Error("QR không hợp lệ!");
+      const salt = b64ToU8(parts[1]);
+      const iv = b64ToU8(parts[2]);
+      const cipher = b64ToU8(parts[3]);
+      const key = await deriveAesKey(passphrase, salt);
+      const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, cipher);
+      return td.decode(plainBuf);
+    }
+
+    for (let i = 101; i <= 124; i++) {
+      const opt = document.createElement("option");
+      opt.value = i;
+      opt.textContent = i;
+      document.getElementById("made").appendChild(opt);
+    }
+
+    const qrScanner = new Html5Qrcode("reader");
+    qrScanner.start({ facingMode: "environment" }, { fps: 10, qrbox: 250 }, (decoded) => {
+      decryptWithPassphrase(decoded, MASTER_PASSPHRASE)
+        .then(() => {
+          qrScanner.stop().then(() => {
+            document.getElementById('qr-login').classList.add('hidden');
+            document.getElementById('button-group').classList.add('hidden');
+            document.getElementById('left-column').classList.add('hidden');
+            document.getElementById('right-column').classList.add('hidden');
+            document.getElementById('account-login').classList.remove('hidden');
+          });
+        })
+        .catch(() => {
+          document.getElementById('qr-error').classList.remove('hidden');
+        });
+    });
+
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          document.getElementById('account-login').classList.add('hidden');
+          document.getElementById('login-form').classList.remove('hidden');
+        } else {
+          document.getElementById('login-error').classList.remove('hidden');
+        }
+      })
+      .catch(err => {
+        console.error("Lỗi API login:", err);
+        alert("Không thể kết nối server!");
+      });
+    }
+
+    function updateCountdown() {
+      const m = Math.floor(time / 60).toString().padStart(2, '0');
+      const s = (time % 60).toString().padStart(2, '0');
+      document.getElementById("countdown").innerText = `Thời gian: ${m}:${s}`;
+      if (time <= 0) {
+        clearInterval(timer);
+        submitExam();
+      }
+      time--;
+      localStorage.setItem("savedTime", time);
+    }
+
+    function startExam() {
+  const name = document.getElementById('hoten').value.trim();
+  const sbd = document.getElementById('sbd').value.trim();
+  const dob = document.getElementById("ngaysinh").value;
+  const made = document.getElementById('made').value;
+
+  if (!name || !sbd || !dob || !made) {
+    return alert("Vui lòng nhập đầy đủ Họ tên, SBD, Ngày sinh và Mã đề!");
+  }
+
+  document.getElementById("login-form").classList.add("hidden");
+  document.getElementById("exam-container").classList.remove("hidden");
+
+  const savedTime = localStorage.getItem("savedTime");
+  time = savedTime ? parseInt(savedTime) : 3600;
+  timer = setInterval(updateCountdown, 1000);
+
+  fetch(`${API_BASE}/questions?made=${made}`)
+    .then(res => res.ok ? res.json() : Promise.reject())
+    .then(data => {
+      if (!Array.isArray(data)) throw new Error("Dữ liệu đề thi không hợp lệ");
+
+      questionData = data;
+      const questionsDiv = document.getElementById("questions");
+      questionsDiv.innerHTML = "";
+
+      questionData.forEach((q, i) => {
+        const div = document.createElement('div');
+        div.classList.add("mb-6");
+
+        div.innerHTML = `<label class="block font-semibold mb-2">Câu ${i + 1}: ${q.noi_dung}</label>`;
+
+        // Nếu là tự luận
+        if (q.kieu_cau_hoi === "tu_luan") {
+          div.innerHTML += `
+            <textarea id="q${i}" rows="4" class="border p-2 w-full" placeholder="Nhập câu trả lời..."></textarea>
+          `;
+        } 
+        // Nếu là trắc nghiệm
+        else if (q.lua_chon) {
+          const options = Object.entries(q.lua_chon).map(
+            ([k, v]) => `<option value="${k}">${k}. ${v}</option>`
+          ).join("");
+
+          div.innerHTML += `
+            <select id="q${i}" class="border p-2 w-full">
+              <option value="">-- Chọn --</option>
+              ${options}
+            </select>
+          `;
+        }
+
+        questionsDiv.appendChild(div);
+      });
+    })
+    .catch(() => alert("Không thể tải file đề thi."));
+}
+
+
+    function clearTempStorage() {
+      localStorage.removeItem("savedAnswers");
+      localStorage.removeItem("hoten");
+      localStorage.removeItem("made");
+      localStorage.removeItem("savedTime");
+    }
+
+  function submitExam() {
+  clearInterval(timer);
+  const name = document.getElementById('hoten').value.trim();
+  const made = document.getElementById('made').value;
+  const sbd = document.getElementById('sbd').value.trim();
+  const dob = document.getElementById("ngaysinh").value;
+
+  const answers = [];
+  let score = 0;
+
+  questionData.forEach((q, i) => {
+  const select = document.getElementById(`q${i}`);
+  const selected = select ? select.value.trim() : "";
+  const correct = q.dap_an_dung ? q.dap_an_dung.trim() : "";
+  const kieu = q.kieu_cau_hoi || "trac_nghiem";
+
+  const isCorrect =
+    kieu === "trac_nghiem" &&
+    selected.toUpperCase() === correct.toUpperCase();
+
+  if (isCorrect) {
+    score++;
+  }
+
+  answers.push({
+    cau: i + 1,
+    noi_dung: q.noi_dung,
+    da_chon: selected || "(chưa chọn)",
+    dung_chinh_xac: correct,
+    dung: isCorrect,
+    kieu: kieu,
+    goi_y_dap_an: q.goi_y_dap_an || ""
+  });
+});
+
+  const finalScore = (score / questionData.length * 10).toFixed(2);
+
+  fetch(`${API_BASE}/save_result`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hoten: name,
+      sbd: sbd,
+      ngaysinh: dob,
+      made: made,
+      diem: finalScore,
+      answers: answers
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "saved") {
+      clearTempStorage();
+      const now = new Date();
+      const formattedDate = now.toLocaleString("vi-VN", {
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+      });
+
+      let fileContent = `KẾT QUẢ BÀI THI\n`;
+      fileContent += `Họ tên: ${name}\nSBD: ${sbd}\nNgày sinh: ${dob}\nMã đề: ${made}\nĐiểm: ${finalScore}/10\n`;
+      fileContent += `Nộp lúc: ${formattedDate}\n\n`;
+
+      answers.forEach(ans => {
+        fileContent += `Câu ${ans.cau}: ${ans.noi_dung}\n`;
+        fileContent += `  Bạn chọn: ${ans.da_chon}`;
+
+        if (ans.kieu === "trac_nghiem") {
+          fileContent += ` ${ans.dung ? "- ĐÚNG" : "- SAI"}\n`;
+          if (ans.dung_chinh_xac) {
+            fileContent += `  Đáp án đúng: ${ans.dung_chinh_xac}\n`;
+          }
+        } else if (ans.kieu === "tu_luan") {
+          fileContent += `\n`;
+          if (ans.goi_y_dap_an) {
+            fileContent += `  Gợi ý đáp án: ${ans.goi_y_dap_an}\n`;
+          }
+        } else {
+          fileContent += `\n`;
+        }
+
+        fileContent += `\n`;
+      });
+
+      const header = `<html xmlns:o='urn:schemas-microsoft-com:office:office'
+              xmlns:w='urn:schemas-microsoft-com:office:word'
+              xmlns='http://www.w3.org/TR/REC-html40'>
+        <head><meta charset='utf-8'><title>Kết quả</title></head><body>`;
+      const footer = "</body></html>";
+      const wordContent = header + fileContent.replace(/\n/g, "<br>") + footer;
+      const blob = new Blob(['\ufeff', wordContent], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const fileName = `KQ_${name.replace(/\s+/g, "_")}_${made}.doc`;
+
+      const resultDiv = document.getElementById("result-container");
+      resultDiv.classList.remove("hidden");
+      resultDiv.innerHTML = `
+        <h1 class="text-2xl font-bold text-green-600 mb-4">✅ KẾT QUẢ BÀI THI !</h1>
+        <p class="text-sm text-gray-500 mb-4">🕒 Nộp lúc: ${formattedDate}</p>
+        <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded mb-4">${fileContent}</pre>
+        <div class="flex gap-4">
+          <a href="${url}" download="${fileName}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            ⬇️ Tải kết quả .Doc
+          </a>
+          <button onclick="downloadPDF()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+            ⬇️ Tải kết quả .PDF
+          </button>
+        </div>
+      `;
+      document.getElementById("exam-container").classList.add("hidden");
+    } else {
+      alert("❌ Lỗi khi lưu kết quả!");
+    }
+  })
+  .catch(err => {
+    console.error("Lỗi khi gửi dữ liệu:", err);
+    alert("❌ Đã xảy ra lỗi khi nộp bài!");
+  });
+}
+
+
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const text = document.querySelector("#result-container pre").innerText;
+      const splitText = doc.splitTextToSize(text, 180);
+      doc.setFont("Times", "Normal");
+      doc.setFontSize(12);
+      doc.text(splitText, 10, 10);
+      const pdfName = `KQ_${document.getElementById('hoten').value.replace(/\s+/g, "_")}_${document.getElementById('made').value}.pdf`;
+      doc.save(pdfName);
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const url = window.location.href.toLowerCase();
+      const left = document.getElementById("left-column");
+      const right = document.getElementById("right-column");
+      const main = document.getElementById("main-column");
+
+      const hideOnPages = ["dangnhap", "tracnghiem", "thisinh"];
+
+      if (hideOnPages.some(page => url.includes(page))) {
+        if (left) left.classList.add("hidden");
+        if (right) right.classList.add("hidden");
+        if (main) {
+          main.classList.remove("md:w-1/3", "md:w-1/2", "md:w-1/4");
+          main.classList.add("w-full");
+        }
+      }
+    });
+  </script>
+  <script>
+  let time = parseInt(localStorage.getItem("savedTime")) || 900; // 15 phút mặc định
+
+  function restoreAnswers() {
+    const saved = JSON.parse(localStorage.getItem("savedAnswers") || "{}");
+    for (const [key, value] of Object.entries(saved)) {
+      const select = document.getElementById(key);
+      if (select) {
+        select.value = value;
+      } else {
+        console.warn(`Không tìm thấy phần tử: ${key}`);
+      }
+    }
+  }
+
+  function setupAnswerTracking() {
+    questionData.forEach((q, i) => {
+      const select = document.getElementById(`q${i}`);
+      const key = `q${i}`;
+      if (select) {
+        select.addEventListener("change", () => {
+          const current = JSON.parse(localStorage.getItem("savedAnswers") || "{}");
+          current[key] = select.value;
+          localStorage.setItem("savedAnswers", JSON.stringify(current));
+        });
+      }
+    });
+  }
+
+  // Tự động lưu thời gian còn lại mỗi giây
+  setInterval(() => {
+    localStorage.setItem("savedTime", time);
+  }, 1000);
+
+  // Xóa bộ nhớ tạm sau khi nộp bài
+  function clearTempStorage() {
+    localStorage.removeItem("savedAnswers");
+    localStorage.removeItem("hoten");
+    localStorage.removeItem("made");
+    localStorage.removeItem("savedTime");
+  }
+
+  // Kích hoạt khi DOM đã sẵn sàng
+  document.addEventListener("DOMContentLoaded", () => {
+    restoreAnswers();
+    setupAnswerTracking();
+  });
+</script>
+</body>
+</html>

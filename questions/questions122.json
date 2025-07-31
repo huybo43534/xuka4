@@ -1,0 +1,102 @@
+[
+  {
+    "noi_dung": "Question 1. Who was the first President of the United States?",
+    "lua_chon": {"A": "Abraham Lincoln", "B": "George Washington", "C": "Thomas Jefferson", "D": "John Adams"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 2. In which year did World War II end?",
+    "lua_chon": {"A": "1940", "B": "1945", "C": "1939", "D": "1950"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 3. Who discovered America in 1492?",
+    "lua_chon": {"A": "Christopher Columbus", "B": "Marco Polo", "C": "Amerigo Vespucci", "D": "Vasco da Gama"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 4. Which wall divided East and West Berlin?",
+    "lua_chon": {"A": "Berlin Wall", "B": "Iron Curtain", "C": "Great Wall", "D": "Wall of Europe"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 5. When did the French Revolution begin?",
+    "lua_chon": {"A": "1789", "B": "1776", "C": "1804", "D": "1812"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 6. Who was known as the Iron Lady?",
+    "lua_chon": {"A": "Angela Merkel", "B": "Margaret Thatcher", "C": "Indira Gandhi", "D": "Golda Meir"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 7. The Cold War was primarily between which two countries?",
+    "lua_chon": {"A": "USA and China", "B": "USA and Germany", "C": "USA and USSR", "D": "USA and UK"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 8. Where did the Renaissance begin?",
+    "lua_chon": {"A": "France", "B": "England", "C": "Italy", "D": "Spain"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 9. What ship sank in 1912 after hitting an iceberg?",
+    "lua_chon": {"A": "Britannic", "B": "Titanic", "C": "Lusitania", "D": "Olympic"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 10. What empire was ruled by Julius Caesar?",
+    "lua_chon": {"A": "Greek", "B": "Egyptian", "C": "Roman", "D": "Ottoman"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 11. What was the main cause of World War I?",
+    "lua_chon": {"A": "Assassination of Archduke Franz Ferdinand", "B": "Nazi invasion", "C": "Revenge for Napoleon", "D": "Oil disputes"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 12. Who was the leader of Nazi Germany?",
+    "lua_chon": {"A": "Joseph Stalin", "B": "Adolf Hitler", "C": "Benito Mussolini", "D": "Winston Churchill"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 13. The Great Depression began in which year?",
+    "lua_chon": {"A": "1925", "B": "1933", "C": "1929", "D": "1941"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 14. Who signed the Emancipation Proclamation?",
+    "lua_chon": {"A": "George Washington", "B": "Ulysses S. Grant", "C": "Abraham Lincoln", "D": "Andrew Johnson"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 15. What was the name of the first man on the moon?",
+    "lua_chon": {"A": "Yuri Gagarin", "B": "Neil Armstrong", "C": "Buzz Aldrin", "D": "Alan Shepard"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 16. When did Vietnam gain independence from France?",
+    "lua_chon": {"A": "1945", "B": "1954", "C": "1975", "D": "1960"},
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Question 17. Which war was known as 'The War to End All Wars'?",
+    "lua_chon": {"A": "Vietnam War", "B": "Korean War", "C": "World War I", "D": "World War II"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 18. The Declaration of Independence was signed in which year?",
+    "lua_chon": {"A": "1776", "B": "1789", "C": "1812", "D": "1750"},
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Question 19. What was the name of the ship used by Darwin to travel?",
+    "lua_chon": {"A": "Endurance", "B": "Discovery", "C": "Beagle", "D": "Enterprise"},
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Question 20. Who was the longest-reigning British monarch before Queen Elizabeth II?",
+    "lua_chon": {"A": "Queen Victoria", "B": "King George III", "C": "Queen Anne", "D": "Henry VIII"},
+    "dap_an_dung": "A"
+  }
+]

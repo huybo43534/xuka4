@@ -1,0 +1,202 @@
+[
+  {
+    "noi_dung": "Câu 1. Thuế thu nhập cá nhân là khoản tiền mà:",
+    "lua_chon": {
+      "A": "Công ty trả cho nhân viên", 
+      "B": "Người lao động phải nộp cho nhà nước", 
+      "C": "Ngân hàng trừ tự động", 
+      "D": "Không ai phải nộp"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 2. Cơ quan nào có thẩm quyền ban hành luật ở Việt Nam?",
+    "lua_chon": {
+      "A": "Chính phủ", 
+      "B": "Quốc hội", 
+      "C": "Tòa án Nhân dân Tối cao", 
+      "D": "Bộ Tư pháp"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 3. Trong kinh tế thị trường, yếu tố nào quyết định giá cả hàng hóa?",
+    "lua_chon": {
+      "A": "Chính phủ", 
+      "B": "Cung và cầu", 
+      "C": "Thuế", 
+      "D": "Tiền lương"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 4. Vi phạm pháp luật hình sự có thể dẫn đến:",
+    "lua_chon": {
+      "A": "Phạt cảnh cáo", 
+      "B": "Phạt tiền", 
+      "C": "Phạt tù", 
+      "D": "Cả A, B, C"
+    },
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Câu 5. Một doanh nghiệp bán được 100 sản phẩm với giá 200.000đ/sp. Doanh thu của doanh nghiệp là:",
+    "lua_chon": {
+      "A": "200.000đ", 
+      "B": "2 triệu đồng", 
+      "C": "20 triệu đồng", 
+      "D": "200 triệu đồng"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 6. Quyền tự do kinh doanh của công dân được quy định trong:",
+    "lua_chon": {
+      "A": "Bộ luật Lao động", 
+      "B": "Hiến pháp", 
+      "C": "Luật Doanh nghiệp", 
+      "D": "Luật Dân sự"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 7. Đặc điểm của nền kinh tế thị trường là:",
+    "lua_chon": {
+      "A": "Không có sự quản lý của nhà nước", 
+      "B": "Do nhà nước điều hành toàn bộ", 
+      "C": "Dựa trên quan hệ cung cầu", 
+      "D": "Không có cạnh tranh"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 8. Một sản phẩm giảm giá 25% so với giá gốc 800.000đ. Giá mới là:",
+    "lua_chon": {
+      "A": "600.000đ", 
+      "B": "650.000đ", 
+      "C": "700.000đ", 
+      "D": "750.000đ"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 9. Hành vi nào sau đây được xem là vi phạm hành chính?",
+    "lua_chon": {
+      "A": "Trộm cắp tài sản", 
+      "B": "Không đội mũ bảo hiểm", 
+      "C": "Buôn bán ma túy", 
+      "D": "Giết người"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 10. Lãi suất ngân hàng là gì?",
+    "lua_chon": {
+      "A": "Tiền khách hàng nộp vào", 
+      "B": "Khoản tiền ngân hàng trả khi gửi tiết kiệm", 
+      "C": "Tiền phạt khi rút sớm", 
+      "D": "Thuế đánh vào tài khoản"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 11. Khi ký hợp đồng lao động, người lao động và người sử dụng lao động cần:",
+    "lua_chon": {
+      "A": "Cam kết bằng miệng", 
+      "B": "Có mặt đầy đủ", 
+      "C": "Tuân thủ pháp luật lao động", 
+      "D": "Không cần thỏa thuận rõ ràng"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 12. Một người gửi ngân hàng 50 triệu với lãi suất 6%/năm. Sau 1 năm nhận được:",
+    "lua_chon": {
+      "A": "53 triệu", 
+      "B": "52 triệu", 
+      "C": "51 triệu", 
+      "D": "53 triệu"
+    },
+    "dap_an_dung": "A"
+  },
+  {
+    "noi_dung": "Câu 13. Quyền sở hữu tài sản là:",
+    "lua_chon": {
+      "A": "Chỉ có ở doanh nghiệp", 
+      "B": "Chỉ có ở nhà nước", 
+      "C": "Mọi công dân đều có", 
+      "D": "Chỉ người giàu mới có"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 14. Tư liệu sản xuất bao gồm:",
+    "lua_chon": {
+      "A": "Tiền và vàng", 
+      "B": "Đất đai và lao động", 
+      "C": "Máy móc, nhà xưởng", 
+      "D": "Sản phẩm tiêu dùng"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 15. Hình thức sở hữu chủ yếu trong nền kinh tế Việt Nam hiện nay là:",
+    "lua_chon": {
+      "A": "Sở hữu tư nhân", 
+      "B": "Sở hữu toàn dân", 
+      "C": "Sở hữu hỗn hợp", 
+      "D": "Sở hữu nước ngoài"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 16. Tăng trưởng kinh tế được hiểu là:",
+    "lua_chon": {
+      "A": "Tăng giá hàng hóa", 
+      "B": "Tăng tổng sản phẩm quốc nội (GDP)", 
+      "C": "Tăng tỷ lệ thất nghiệp", 
+      "D": "Tăng thuế thu nhập"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 17. Pháp luật có vai trò gì trong đời sống xã hội?",
+    "lua_chon": {
+      "A": "Kiểm soát nhân dân", 
+      "B": "Đảm bảo công bằng, trật tự", 
+      "C": "Làm khó doanh nghiệp", 
+      "D": "Giới hạn tự do"
+    },
+    "dap_an_dung": "B"
+  },
+  {
+    "noi_dung": "Câu 18. Mức lương tối thiểu vùng do ai quy định?",
+    "lua_chon": {
+      "A": "Người sử dụng lao động", 
+      "B": "Người lao động", 
+      "C": "Chính phủ", 
+      "D": "Ngân hàng Nhà nước"
+    },
+    "dap_an_dung": "C"
+  },
+  {
+    "noi_dung": "Câu 19. Một sản phẩm có giá vốn 120.000đ và bán với lợi nhuận 25%. Giá bán là:",
+    "lua_chon": {
+      "A": "135.000đ", 
+      "B": "140.000đ", 
+      "C": "145.000đ", 
+      "D": "150.000đ"
+    },
+    "dap_an_dung": "D"
+  },
+  {
+    "noi_dung": "Câu 20. Quyền biểu quyết trong doanh nghiệp cổ phần phụ thuộc vào:",
+    "lua_chon": {
+      "A": "Số cổ phiếu sở hữu", 
+      "B": "Chức vụ trong công ty", 
+      "C": "Thời gian làm việc", 
+      "D": "Tài sản cá nhân"
+    },
+    "dap_an_dung": "A"
+  }
+]
