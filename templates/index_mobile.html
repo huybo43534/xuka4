@@ -92,123 +92,50 @@
     </div>
   </nav>
 
-  <!-- QR + 2 bên bài viết hiển thị DỌC -->
- <div class="flex flex-col md:flex-row justify-center items-start gap-14 px-14 mt-8">
+  <!-- Wrapper chỉ chứa phần giữa -->
+<div class="w-full px-4 mt-10">
 
-    <!-- Cột trái: 2 khối tin tức xếp dọc -->
-    <div id="left-column" class="flex flex-col gap-2 w-full md:w-1/4">
-      <!-- Bài viết trái 1 -->
-      <div class="bg-white p-5 rounded-xl shadow-lg">
-        <h2 class="text-xl font-bold text-blue-800 border-b pb-2 mb-3">📰 Tin mới từ VnExpress</h2>
-        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <li>
-            🌍<a href="https://vnexpress.net/the-gioi" target="_blank" class="text-blue-600 font-semibold hover:underline">
-              Tin tức thế giới
-            </a><br>
-            <span class="text-gray-500">Tổng hợp nhanh những diễn biến chính trị, kinh tế, xã hội nổi bật trên thế giới.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="bg-white p-5 rounded-xl shadow-lg">
-        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <li>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
-            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
-              Dành cho quảng cáo
-            </a><br>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/bo.jpg" alt="icon" class="inline w-80 h-12 mr-1">
-          </li>
-        </ul>
-      </div>
-      <div class="bg-white p-5 rounded-xl shadow-lg">
-        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <li>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
-            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
-              Dành cho quảng cáo
-            </a><br>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/k.jpg" alt="icon" class="inline w-80 h-12 mr-1">
-          </li>
-        </ul>
-      </div>      
+  <!-- Cột giữa: QR Login và nhóm nút -->
+  <div id="main-column" class="w-full max-w-xl mx-auto flex flex-col gap-6">
+
+    <!-- QR Login -->
+    <div id="qr-login" class="bg-white p-6 rounded-xl shadow text-center">
+      <h1 class="text-xl font-bold text-pink-500 mb-4">QUÉT MÃ QR</h1>
+      <div id="reader" class="mx-auto" style="width: 100%; max-width: 300px;"></div>
+      <p id="qr-error" class="text-red-600 mt-2 font-semibold hidden">QR không hợp lệ!</p>
     </div>
 
-    <!-- Cột giữa: QR Login và nhóm nút xếp dọc -->
-    <div id="main-column" class="flex flex-col gap-4 w-full max-w-md mx-auto">
-      <!-- QR Login -->
-      <div id="qr-login" class="bg-white p-6 rounded-xl shadow text-center">
-        <h1 class="text-1xl font-bold text-pink-500 mb-4">QUÉT MÃ QR</h1>
-        <div id="reader" class="mx-auto" style="width: 90%; max-width: 300px;"></div>
-        <p id="qr-error" class="text-red-600 mt-2 font-semibold hidden">QR không hợp lệ!</p>
-      </div>
-
-      <!-- Nhóm 3 nút nằm ngang -->
-      <div id="button-group" class="flex justify-center gap-4">
-        <a href="/tronde" 
-           class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold text-base 
-                  shadow-md shadow-blue-900/40 
-                  hover:shadow-lg hover:scale-105 
-                  active:scale-95 
-                  transition-transform duration-200 ease-out">
-           Quản trị
-        </a>
-        <a href="/xuka" 
-           class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-green-400 to-green-600 text-white font-semibold text-base 
-                  shadow-md shadow-green-900/40 
-                  hover:shadow-lg hover:scale-105 
-                  active:scale-95 
-                  transition-transform duration-200 ease-out">
-           Đánh giá
-        </a>
-        <a href="/huongdan" 
-           class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-semibold text-base 
-                  shadow-md shadow-yellow-900/40 
-                  hover:shadow-lg hover:scale-105 
-                  active:scale-95 
-                  transition-transform duration-200 ease-out">
-           Hướng dẫn
-        </a>
-      </div>
+    <!-- Nhóm 3 nút -->
+    <div id="button-group" class="flex flex-wrap justify-center gap-4">
+      <a href="/tronde" 
+         class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold text-base 
+                shadow-md shadow-blue-900/40 
+                hover:shadow-lg hover:scale-105 
+                active:scale-95 
+                transition-transform duration-200 ease-out">
+         Quản trị
+      </a>
+      <a href="/xuka" 
+         class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-green-400 to-green-600 text-white font-semibold text-base 
+                shadow-md shadow-green-900/40 
+                hover:shadow-lg hover:scale-105 
+                active:scale-95 
+                transition-transform duration-200 ease-out">
+         Đánh giá
+      </a>
+      <a href="/huongdan" 
+         class="px-5 py-2.5 rounded-xl bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-semibold text-base 
+                shadow-md shadow-yellow-900/40 
+                hover:shadow-lg hover:scale-105 
+                active:scale-95 
+                transition-transform duration-200 ease-out">
+         Hướng dẫn
+      </a>
     </div>
 
-    <!-- Cột phải: 2 khối thông báo xếp dọc -->
-    <div id="right-column" class="flex flex-col gap-2 w-full md:w-1/4">
-      <!-- Bài viết phải 1 -->
-      <div class="bg-white p-5 rounded-xl shadow-lg">
-        <h2 class="text-xl font-bold text-blue-800 border-b pb-2 mb-3">📰 SỞ GD&ĐT ĐÔNG NAI</h2>
-        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <li>
-            🌍 <a href="https://dnis.dongnai.gov.vn/" target="_blank" class="text-blue-600 font-semibold hover:underline">
-              Hệ thống văn bản
-            </a><br>
-            <span class="text-gray-500">Hệ thống văn bản chỉ đạo điều hành ngành GD&ĐT Đông Nai.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="bg-white p-5 rounded-xl shadow-lg">
-        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <li>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
-            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
-              Dành cho quảng cáo
-            </a><br>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/k.jpg" alt="icon" class="inline w-80 h-12 mr-1">
-          </li>
-        </ul>
-      </div>
-      <div class="bg-white p-5 rounded-xl shadow-lg">
-        <ul class="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <li>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/xuka.ico" alt="icon" class="inline w-4 h-4 mr-1">
-            <a href="https://xuka.com.vn/huongdan" target="_blank" class="text-blue-600 font-semibold hover:underline">
-              Dành cho quảng cáo
-            </a><br>
-            <img src="https://raw.githubusercontent.com/huybo43534/xuka4/main/bo.jpg" alt="icon" class="inline w-80 h-12 mr-1">
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
+</div>
+
 
   <!-- Account Login -->
   <div id="account-login" class="max-w-md mx-auto bg-white p-6 rounded shadow hidden">
@@ -266,6 +193,7 @@
   </footer>
 
   <script>
+  let questionData = [];
     const API_BASE = (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
       ? "http://127.0.0.1:5000"
       : "https://xuka.com.vn";
@@ -318,11 +246,12 @@
       decryptWithPassphrase(decoded, MASTER_PASSPHRASE)
         .then(() => {
           qrScanner.stop().then(() => {
-            document.getElementById('qr-login').classList.add('hidden');
-            document.getElementById('button-group').classList.add('hidden');
-            document.getElementById('left-column').classList.add('hidden');
-            document.getElementById('right-column').classList.add('hidden');
-            document.getElementById('account-login').classList.remove('hidden');
+            document.getElementById('qr-login')?.classList.add('hidden');
+            document.getElementById('button-group')?.classList.add('hidden');
+            document.getElementById('left-column')?.classList.add('hidden');
+            document.getElementById('right-column')?.classList.add('hidden');
+            document.getElementById('account-login')?.classList.remove('hidden');
+
           });
         })
         .catch(() => {
