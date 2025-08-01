@@ -7,12 +7,19 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import re
 import json, os
+from flask_socketio import SocketIO, emit
+
+
+
 
 app = Flask(__name__)
 app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change_this_secret_key")
 QUESTIONS_FILE = "questions.json"
 QUESTION_DIR = "D:/xuka4_ready/questions"
+socketio = SocketIO(app)
+
+
 # CSRF
 csrf = CSRFProtect(app)
 
@@ -89,6 +96,20 @@ def tinh_diem_va_luu_bai_lam(bai_lam, de_thi):
         "tong_cau_trac_nghiem": tong_cau_trac_nghiem,
         "bai_lam_chi_tiet": ket_qua
     }
+
+
+@app.route('/alochat')
+def alochat():
+    return render_template('alochat.html')
+
+@socketio.on('send_message')
+def handle_message(data):
+    emit('receive_message', data, broadcast=True)
+
+@socketio.on('signal')
+def handle_signal(data):
+    emit('signal', data, broadcast=True, include_self=False)
+
 
 # --- Routes (views) ---
 @app.route('/favicon.ico')
@@ -363,5 +384,8 @@ def handle_all(e):
     app.logger.exception(e)
     return jsonify({"error": "internal_error"}), 500
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=False)
+if __name__ == "__main__":
+    socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+
+
+
