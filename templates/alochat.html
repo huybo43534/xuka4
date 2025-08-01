@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Video + Chat + Audio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
 </head>
-<body class="bg-gray-100 p-6 font-sans">
+<body class="bg-gray-100 min-h-screen font-sans flex flex-col items-center justify-start p-4">
 
 <!-- Đăng nhập -->
-<div id="loginPanel" class="max-w-md mx-auto bg-white p-6 rounded-xl shadow-md">
-  <h2 class="text-xl font-bold text-center mb-4 text-gray-700">🔐 Nhập tên bất kỳ để vào phòng</h2>
-  <input id="usernameInput" class="w-full p-2 border rounded mb-4" placeholder="Tên người dùng">
-  <button onclick="login()" class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Đăng nhập</button>
+<div id="loginPanel" class="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg mt-12">
+  <h2 class="text-2xl font-bold text-center text-gray-700 mb-6">🔐 Nhập tên để vào phòng</h2>
+  <input id="usernameInput" class="w-full p-3 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tên người dùng" />
+  <button onclick="login()" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Đăng nhập</button>
 </div>
-
 
 <!-- Giao diện chính -->
-<div id="mainPanel" class="hidden max-w-3xl mx-auto mt-6 bg-white p-6 rounded-xl shadow-md space-y-4">
-  <h2 class="text-lg font-bold text-center" id="userLabel">👤 Bạn</h2>
- <div class="text-2xl font-bold text-green-600 text-center" id="statusLabel">🟢 ALO CHAT</div>
+<div id="mainPanel" class="hidden w-full max-w-4xl bg-white p-6 rounded-2xl shadow-lg mt-8 space-y-5">
 
+  <div class="text-center space-y-1">
+    <h2 id="userLabel" class="text-xl font-semibold text-gray-800">👤 Bạn</h2>
+    <div id="statusLabel" class="text-lg font-semibold text-green-600">🟢 ALO CHAT</div>
+  </div>
 
-  <div class="flex gap-4 justify-center">
-    <div>
-      <h3 class="text-center text-gray-600 text-sm">🎥 Camera của bạn</h3>
-      <video id="localVideo" autoplay muted class="w-60 h-32 border rounded object-cover"></video>
+  <!-- Camera -->
+  <div class="flex justify-center gap-6">
+    <div class="text-center space-y-2">
+      <h3 class="text-gray-600 text-sm">🎥 Camera của bạn</h3>
+      <video id="localVideo" autoplay muted class="w-64 h-36 border rounded-lg shadow object-cover"></video>
     </div>
-    <div>
-      <h3 class="text-center text-gray-600 text-sm">🎥 Camera người kia</h3>
-      <video id="remoteVideo" autoplay class="w-60 h-32 border rounded object-cover"></video>
+    <div class="text-center space-y-2">
+      <h3 class="text-gray-600 text-sm">🎥 Camera người kia</h3>
+      <video id="remoteVideo" autoplay class="w-64 h-36 border rounded-lg shadow object-cover"></video>
     </div>
   </div>
-   <footer class="mt-10 py-4 text-center text-gray-700 text-sm font-medium rounded">
-    Bản quyền © 2025 <span class="font-bold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a>
-  </footer>
+   
+   <center> Bản quyền © 2025 <span class="font-bold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a>
+
+  <!-- Nút điều khiển -->
   <div class="flex justify-center gap-4">
-    <button onclick="toggleCamera()" id="camBtn" class="py-2 px-4 bg-green-500 text-white rounded">📷 Bật Camera</button>
-    <button onclick="toggleMic()" id="micBtn" class="py-2 px-4 bg-green-500 text-white rounded">🎙️ Bật Mic</button>
+    <button onclick="toggleCamera()" id="camBtn" class="py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 transition">📷 Bật Camera</button>
+    <button onclick="toggleMic()" id="micBtn" class="py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 transition">🎙️ Bật Mic</button>
   </div>
 
-  <div id="activityLabel" class="text-center text-sm text-red-500 hidden">🔴 Đang nói...</div>
+  <!-- Đang nói -->
+  <div id="activityLabel" class="text-center text-red-500 text-sm hidden">🔴 Đang nói...</div>
+<br>
+  <!-- Chat -->
+  <div class="flex gap-2">
+    <input id="messageInput" class="flex-1 border p-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nhập tin nhắn..." />
+    <button onclick="sendMessage()" class="px-4 py-2 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition">Gửi</button>
+  </div>
+  <div id="chatBox" class="mt-2 p-3 bg-gray-50 h-32 overflow-y-auto text-sm border rounded-md"></div>
 
-  <input id="messageInput" class="border p-2 w-full rounded" placeholder="Nhập tin nhắn...">
-  <button onclick="sendMessage()" class="px-4 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600">Gửi</button>
-
-
-  <div id="chatBox" class="mt-4 p-2 bg-gray-50 h-32 overflow-y-auto text-sm border rounded"></div>
 </div>
+
 
 <script>
 const socket = io();
@@ -193,8 +200,6 @@ socket.on("receive_message", data => {
   chat.scrollTop = chat.scrollHeight;
 });
 </script>
-<footer class="mt-10 py-4 text-center text-gray-700 text-sm font-medium rounded">
-    Bản quyền © 2025 <span class="font-bold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a>
-  </footer>
+
 </body>
 </html>
