@@ -9,6 +9,8 @@ import re
 import json, os
 from flask_socketio import SocketIO, emit
 import eventlet
+import eventlet
+print("✅ eventlet loaded OK")
 
 
 
