@@ -8,11 +8,11 @@ from flask_limiter.util import get_remote_address
 import re
 import json, os
 from flask_socketio import SocketIO, emit
+import eventlet
 
 
 
-
-
+eventlet.monkey_patch()
 app = Flask(__name__)
 app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change_this_secret_key")
