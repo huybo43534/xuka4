@@ -8,6 +8,9 @@ from flask_limiter.util import get_remote_address
 import re
 import json, os
 from flask_socketio import SocketIO, emit
+import eventlet
+
+eventlet.monkey_patch()
 
 
 
