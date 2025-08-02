@@ -12,14 +12,15 @@ from flask_socketio import SocketIO, emit
 
 
 
+
 app = Flask(__name__)
 app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change_this_secret_key")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 QUESTION_DIR = os.path.join(BASE_DIR, "questions")
 QUESTIONS_FILE = os.path.join(QUESTION_DIR, "questions.json")
 socketio = SocketIO(app, async_mode="threading")
-
 
 
 # CSRF
@@ -137,7 +138,7 @@ def tronde():
 def h2():
     return render_template('h2.html')
 
-@app.route("/")
+@app.route("/index")
 def index():
     return render_template("index.html")
 
@@ -388,6 +389,3 @@ def handle_all(e):
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
-
-
-
