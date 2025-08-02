@@ -17,7 +17,6 @@ app = Flask(__name__)
 app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change_this_secret_key")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 QUESTION_DIR = os.path.join(BASE_DIR, "questions")
 QUESTIONS_FILE = os.path.join(QUESTION_DIR, "questions.json")
 socketio = SocketIO(app, async_mode="threading")
