@@ -1,60 +1,175 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Video + Chat + Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alo Chat</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark {
+      background: linear-gradient(to bottom, #1f2937, #374151);
+      color: #e5e7eb;
+    }
+    .dark .bg-white {
+      background-color: #374151;
+    }
+    .dark .text-gray-700 {
+      color: #e5e7eb;
+    }
+    .dark .bg-gray-50 {
+      background-color: #4b5563;
+    }
+    .chat-bubble {
+      max-width: 80%;
+      margin: 0.4rem 0.8rem;
+      padding: 0.6rem 1rem;
+      border-radius: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      word-break: break-word;
+    }
+    .chat-bubble.self {
+      background-color: #2563eb;
+      color: white;
+      margin-left: auto;
+    }
+    .chat-bubble.other {
+      background-color: #e5e7eb;
+      color: #1f2937;
+    }
+    .dark .chat-bubble.other {
+      background-color: #4b5563;
+      color: #e5e7eb;
+    }
+    .chat-bubble.translated {
+      background-color: #d1fae5;
+      color: #064e3b;
+      border-left: 3px solid #10b981;
+    }
+    .scroll-to-bottom {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 50%;
+      padding: 0.4rem;
+      cursor: pointer;
+      display: none;
+      font-size: 0.875rem;
+    }
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    .video-container {
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 min-h-screen font-sans flex flex-col items-center justify-start p-4">
+<body class="min-h-screen flex flex-col items-center justify-start p-3 sm:p-4">
+  <!-- Dark mode toggle -->
+  <button id="themeToggle" class="fixed top-3 right-3 p-1.5 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition text-sm">
+    <i class="fas fa-moon"></i>
+  </button>
 
-<!-- Đăng nhập -->
-<div id="loginPanel" class="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg mt-12">
-  <h2 class="text-2xl font-bold text-center text-gray-700 mb-6">🔐 Nhập tên để vào phòng</h2>
-  <input id="usernameInput" class="w-full p-3 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tên người dùng" />
-  <button onclick="login()" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Đăng nhập</button>
-</div>
-
-<!-- Giao diện chính -->
-<div id="mainPanel" class="hidden w-full max-w-4xl bg-white p-6 rounded-2xl shadow-lg mt-8 space-y-5">
-
-  <div class="text-center space-y-1">
-    <h2 id="userLabel" class="text-xl font-semibold text-gray-800">👤 Bạn</h2>
-    <div id="statusLabel" class="text-lg font-semibold text-green-600">🟢 ALO CHAT</div>
+  <!-- Đăng nhập -->
+  <div id="loginPanel" class="w-full max-w-sm bg-white p-5 rounded-xl shadow-md mt-10">
+    <h2 class="text-xl font-semibold text-center text-gray-700 mb-5">🔐 Nhập tên để vào phòng</h2>
+    <input id="usernameInput" class="w-full p-2.5 border rounded-md mb-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tên người dùng" />
+    <button onclick="login()" class="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition text-sm">Đăng nhập</button>
   </div>
 
-  <!-- Camera -->
-  <div class="flex justify-center gap-6">
-    <div class="text-center space-y-2">
-      <h3 class="text-gray-600 text-sm">🎥 Camera của bạn</h3>
-      <video id="localVideo" autoplay muted class="w-64 h-36 border rounded-lg shadow object-cover"></video>
+  <!-- Giao diện chính -->
+  <div id="mainPanel" class="hidden w-full max-w-3xl bg-white p-5 rounded-xl shadow-md mt-6 space-y-4">
+    <div class="text-center space-y-1">
+      <h2 id="userLabel" class="text-lg font-semibold text-gray-800">👤 Bạn</h2>
+      <div id="statusLabel" class="text-base font-medium text-green-600">🟢 ALO CHAT</div>
+      <div id="typingIndicator" class="text-xs text-gray-500 hidden">Đang nhập...</div>
     </div>
-    <div class="text-center space-y-2">
-      <h3 class="text-gray-600 text-sm">🎥 Camera người kia</h3>
-      <video id="remoteVideo" autoplay class="w-64 h-36 border rounded-lg shadow object-cover"></video>
+
+    <!-- Camera -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <div class="text-center space-y-1 video-container">
+        <h3 class="text-gray-600 text-xs">Camera của bạn</h3>
+        <video id="localVideo" autoplay muted class="w-full h-32 rounded-lg shadow-sm object-cover"></video>
+      </div>
+      <div class="text-center space-y-1 video-container">
+        <h3 class="text-gray-600 text-xs">Camera người kia</h3>
+        <video id="remoteVideo" autoplay class="w-full h-32 rounded-lg shadow-sm object-cover"></video>
+      </div>
+    </div>
+
+    <center class="text-xs text-gray-500">Bản quyền © 2025 <span class="font-semibold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a></center>
+
+    <!-- Nút điều khiển -->
+    <div class="flex justify-center gap-2 flex-wrap">
+      <button onclick="toggleCamera()" id="camBtn" class="btn-icon bg-green-500 text-white hover:bg-green-600"><i class="fas fa-video"></i> Bật Camera</button>
+      <button onclick="toggleMic()" id="micBtn" class="btn-icon bg-green-500 text-white hover:bg-green-600"><i class="fas fa-microphone"></i> Bật Mic</button>
+      <button onclick="toggleSpeechTranslation()" id="speechTranslateBtn" class="btn-icon bg-yellow-500 text-white hover:bg-yellow-600"><i class="fas fa-language"></i> Phiên dịch giọng nói</button>
+    </div>
+
+    <!-- Đang nói -->
+    <div id="activityLabel" class="text-center text-red-500 text-xs hidden">Đang nói...</div>
+
+    <!-- Cài đặt phiên dịch -->
+    <div class="flex justify-center gap-2">
+      <select id="translateLang" class="p-2 border rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="en">Tiếng Anh</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="zh-CN">Tiếng Trung</option>
+        <option value="fr">Tiếng Pháp</option>
+      </select>
+      <button onclick="toggleTranslation()" id="translateBtn" class="btn-icon bg-blue-500 text-white hover:bg-blue-600"><i class="fas fa-globe"></i> Bật phiên dịch</button>
+    </div>
+
+    <!-- Chat -->
+    <div class="relative">
+      <div id="chatBox" class="mt-2 p-3 bg-gray-50 h-64 overflow-y-auto text-sm border rounded-md relative"></div>
+      <button id="scrollToBottom" class="scroll-to-bottom"><i class="fas fa-arrow-down"></i></button>
+    </div>
+
+    <!-- Gửi tin nhắn -->
+    <div class="flex gap-2 mt-2">
+      <input id="messageInput" class="flex-1 border p-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nhập tin nhắn..." />
+      <button onclick="sendMessage()" class="btn-icon bg-blue-500 text-white hover:bg-blue-600"><i class="fas fa-paper-plane"></i> Gửi</button>
+    </div>
+
+    <!-- Gửi file -->
+    <div class="flex gap-2 items-center mt-2">
+      <input id="fileInput" type="file" accept="image/*,video/*,application/pdf" class="flex-1 border p-2 rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      <small class="text-xs text-gray-500 hidden sm:block">Nhấn Enter để gửi file</small>
+      <button onclick="sendFile()" class="btn-icon bg-purple-500 text-white hover:bg-purple-600"><i class="fas fa-paperclip"></i> Gửi file</button>
+    </div>
+
+    <!-- File preview -->
+    <div id="filePreview" class="mt-2 hidden">
+      <p class="text-xs text-gray-600">Xem trước:</p>
+      <div id="previewContent" class="max-h-24 overflow-hidden"></div>
+    </div>
+
+    <!-- Tiến trình gửi -->
+    <div id="progressContainer" class="w-full mt-2 hidden">
+      <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+        <div id="progressBar" class="bg-green-500 h-2 transition-all duration-200" style="width: 0%"></div>
+      </div>
+      <div id="progressEstimate" class="text-xs text-gray-600 mt-1 text-center"></div>
     </div>
   </div>
-   
-   <center> Bản quyền © 2025 <span class="font-bold text-red-600">PHẠM HUY TUÂN</span> · ĐT: <a href="tel:0389897989" class="text-blue-600 hover:underline">0389 897 989</a>
-
-  <!-- Nút điều khiển -->
-  <div class="flex justify-center gap-4">
-    <button onclick="toggleCamera()" id="camBtn" class="py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 transition">📷 Bật Camera</button>
-    <button onclick="toggleMic()" id="micBtn" class="py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 transition">🎙️ Bật Mic</button>
-  </div>
-
-  <!-- Đang nói -->
-  <div id="activityLabel" class="text-center text-red-500 text-sm hidden">🔴 Đang nói...</div>
-<br>
-  <!-- Chat -->
-  <div class="flex gap-2">
-    <input id="messageInput" class="flex-1 border p-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nhập tin nhắn..." />
-    <button onclick="sendMessage()" class="px-4 py-2 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition">Gửi</button>
-  </div>
-  <div id="chatBox" class="mt-2 p-3 bg-gray-50 h-32 overflow-y-auto text-sm border rounded-md"></div>
-
-</div>
-
 
 <script>
 const socket = io();
@@ -62,70 +177,114 @@ let username = '';
 let localStream;
 let audioTrack, videoTrack;
 let peerConnection;
+let recognition;
+let isTranslating = false;
+let isSpeechTranslating = false;
 const config = { iceServers: [{ urls: "stun:stun.l.google.com:19302" }] };
 
+// Sanitize input to prevent XSS
+const sanitizeHTML = (str) => {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+};
+
+// Login
 function login() {
-  username = document.getElementById("usernameInput").value.trim();
+  username = sanitizeHTML(document.getElementById("usernameInput").value.trim());
   if (!username) return alert("Vui lòng nhập tên!");
 
   document.getElementById("loginPanel").classList.add("hidden");
   document.getElementById("mainPanel").classList.remove("hidden");
   document.getElementById("userLabel").textContent = `👤 ${username}`;
-
   socket.emit("user_online", { name: username });
 }
 
+// Peer online
 socket.on("peer_online", data => {
   const other = data.name !== username ? data.name : null;
   if (other) {
-    document.getElementById("statusLabel").textContent = `🟢 ${other} đang online`;
+    document.getElementById("statusLabel").textContent = `🟢 ${sanitizeHTML(other)} đang online`;
     startConnection();
   }
 });
 
-
+// Toggle camera
 function toggleCamera() {
   if (!videoTrack) {
     startMedia(true, false);
   } else {
     videoTrack.enabled = !videoTrack.enabled;
-    document.getElementById("camBtn").textContent = videoTrack.enabled ? "📷 Tắt Camera" : "📷 Bật Camera";
+    document.getElementById("camBtn").innerHTML = videoTrack.enabled ? '<i class="fas fa-video"></i> Tắt Camera' : '<i class="fas fa-video-slash"></i> Bật Camera';
   }
 }
 
+// Toggle mic
 function toggleMic() {
   if (!audioTrack) {
     startMedia(false, true);
   } else {
     audioTrack.enabled = !audioTrack.enabled;
-    document.getElementById("micBtn").textContent = audioTrack.enabled ? "🎙️ Tắt Mic" : "🎙️ Bật Mic";
+    document.getElementById("micBtn").innerHTML = audioTrack.enabled ? '<i class="fas fa-microphone"></i> Tắt Mic' : '<i class="fas fa-microphone-slash"></i> Bật Mic';
   }
 }
 
+// Start media
 function startMedia(useVideo = true, useAudio = true) {
-  navigator.mediaDevices.getUserMedia({ video: useVideo, audio: useAudio })
-    .then(stream => {
-      localStream = stream;
-      document.getElementById("localVideo").srcObject = stream;
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    alert("Trình duyệt không hỗ trợ truy cập camera hoặc micro. Vui lòng sử dụng Chrome hoặc Edge.");
+    return;
+  }
 
-      if (useVideo) {
-        videoTrack = stream.getVideoTracks()[0];
-        document.getElementById("camBtn").textContent = "📷 Tắt Camera";
+  navigator.mediaDevices.enumerateDevices()
+    .then(devices => {
+      const hasCamera = devices.some(device => device.kind === 'videoinput');
+      const hasMicrophone = devices.some(device => device.kind === 'audioinput');
+
+      if ((useVideo && !hasCamera) || (useAudio && !hasMicrophone)) {
+        alert("Không tìm thấy " + (useVideo && !hasCamera ? "camera" : "") + 
+              (useAudio && !hasMicrophone ? (useVideo && !hasCamera ? " hoặc micro" : "micro") : "") + 
+              ". Vui lòng kiểm tra thiết bị và kết nối.");
+        return;
       }
 
-      if (useAudio) {
-        audioTrack = stream.getAudioTracks()[0];
-        document.getElementById("micBtn").textContent = "🎙️ Tắt Mic";
-        detectSpeaking(stream);
-      }
+      navigator.mediaDevices.getUserMedia({ video: useVideo, audio: useAudio })
+        .then(stream => {
+          localStream = stream;
+          document.getElementById("localVideo").srcObject = stream;
 
-      if (peerConnection) {
-        stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
-      }
+          if (useVideo) {
+            videoTrack = stream.getVideoTracks()[0];
+            document.getElementById("camBtn").innerHTML = '<i class="fas fa-video-slash"></i> Tắt Camera';
+          }
+
+          if (useAudio) {
+            audioTrack = stream.getAudioTracks()[0];
+            document.getElementById("micBtn").innerHTML = '<i class="fas fa-microphone-slash"></i> Tắt Mic';
+            detectSpeaking(stream);
+            if (isSpeechTranslating) startSpeechRecognition();
+          }
+
+          if (peerConnection) {
+            stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
+          }
+        })
+        .catch(e => {
+          let errorMessage = "Không thể truy cập media: ";
+          if (e.name === "NotFoundError") {
+            errorMessage += "Không tìm thấy thiết bị camera hoặc micro.";
+          } else if (e.name === "NotAllowedError") {
+            errorMessage += "Quyền truy cập camera/micro bị từ chối.";
+          } else {
+            errorMessage += e.message;
+          }
+          alert(errorMessage);
+        });
     })
-    .catch(e => alert("Không thể truy cập media: " + e));
+    .catch(e => alert("Lỗi khi kiểm tra thiết bị: " + e.message));
 }
 
+// Detect speaking
 function detectSpeaking(stream) {
   const ctx = new AudioContext();
   const source = ctx.createMediaStreamSource(stream);
@@ -143,6 +302,7 @@ function detectSpeaking(stream) {
   checkVolume();
 }
 
+// Start WebRTC connection
 function startConnection() {
   peerConnection = new RTCPeerConnection(config);
 
@@ -164,9 +324,10 @@ function startConnection() {
     return peerConnection.setLocalDescription(offer);
   }).then(() => {
     socket.emit("offer", { offer: peerConnection.localDescription });
-  });
+  }).catch(e => alert("Lỗi khi tạo kết nối: " + e.message));
 }
 
+// Handle WebRTC signaling
 socket.on("offer", data => {
   if (!peerConnection) startConnection();
 
@@ -176,32 +337,285 @@ socket.on("offer", data => {
     return peerConnection.setLocalDescription(answer);
   }).then(() => {
     socket.emit("answer", { answer: peerConnection.localDescription });
-  });
+  }).catch(e => alert("Lỗi khi xử lý offer: " + e.message));
 });
 
 socket.on("answer", data => {
-  peerConnection.setRemoteDescription(new RTCSessionDescription(data.answer));
+  peerConnection.setRemoteDescription(new RTCSessionDescription(data.answer))
+    .catch(e => alert("Lỗi khi xử lý answer: " + e.message));
 });
 
 socket.on("ice_candidate", data => {
-  peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate));
+  peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate))
+    .catch(e => alert("Lỗi khi thêm ICE candidate: " + e.message));
 });
 
-function sendMessage() {
-  const msg = document.getElementById("messageInput").value.trim();
-  if (!msg) return;
-  socket.emit("send_message", { from: username, text: msg });
-  document.getElementById("messageInput").value = '';
+// Translate message
+async function translateText(text, targetLang) {
+  try {
+    const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`);
+    const data = await response.json();
+    return data[0][0][0];
+  } catch (e) {
+    console.error("Lỗi dịch:", e);
+    return text;
+  }
 }
 
-socket.on("receive_message", data => {
+// Send message
+function sendMessage() {
+  const msg = sanitizeHTML(document.getElementById("messageInput").value.trim());
+  if (!msg) return;
+  const timestamp = new Date().toLocaleTimeString();
+  const data = { from: username, text: msg, timestamp };
+  socket.emit("send_message", data);
+  appendMessage(data, true);
+  if (isTranslating) {
+    translateText(msg, document.getElementById("translateLang").value)
+      .then(translated => appendMessage({ from: "Hệ thống", text: `Dịch: ${translated}`, timestamp }, false, true));
+  }
+  document.getElementById("messageInput").value = "";
+}
+
+// Receive message
+socket.on("receive_message", async data => {
+  appendMessage(data, false);
+  if (isTranslating) {
+    const translated = await translateText(data.text, document.getElementById("translateLang").value);
+    appendMessage({ from: "Hệ thống", text: `Dịch: ${translated}`, timestamp: new Date().toLocaleTimeString() }, false, true);
+  }
+});
+
+// Append message to chat
+function appendMessage(data, isSelf, isTranslated = false) {
   const chat = document.getElementById("chatBox");
-  chat.innerHTML += `<p><strong>${data.from}:</strong> ${data.text}</p>`;
+  const messageClass = isSelf ? "self" : isTranslated ? "translated" : "other";
+  chat.innerHTML += `
+    <div class="chat-bubble ${messageClass}">
+      <strong>${sanitizeHTML(data.from)}</strong> <span class="text-xs text-gray-500">(${data.timestamp})</span>: ${sanitizeHTML(data.text)}
+    </div>`;
   chat.scrollTop = chat.scrollHeight;
+  toggleScrollButton();
+}
+
+// Toggle translation
+function toggleTranslation() {
+  isTranslating = !isTranslating;
+  document.getElementById("translateBtn").innerHTML = isTranslating ? '<i class="fas fa-globe"></i> Tắt phiên dịch' : '<i class="fas fa-globe"></i> Bật phiên dịch';
+}
+
+// Speech recognition and translation
+function startSpeechRecognition() {
+  if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+    alert("Trình duyệt không hỗ trợ nhận diện giọng nói. Vui lòng sử dụng Chrome hoặc Edge.");
+    return;
+  }
+
+  recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = document.getElementById("translateLang").value;
+  recognition.interimResults = true;
+  recognition.continuous = true;
+
+  recognition.onresult = async event => {
+    const transcript = Array.from(event.results)
+      .map(result => result[0].transcript)
+      .join("");
+    if (event.results[event.results.length - 1].isFinal) {
+      const targetLang = document.getElementById("translateLang").value;
+      const translated = await translateText(transcript, targetLang);
+      appendMessage({ from: username, text: transcript, timestamp: new Date().toLocaleTimeString() }, true);
+      appendMessage({ from: "Hệ thống", text: `Dịch: ${translated}`, timestamp: new Date().toLocaleTimeString() }, false, true);
+      socket.emit("send_message", { from: username, text: transcript, timestamp: new Date().toLocaleTimeString() });
+    }
+  };
+
+  recognition.onerror = e => {
+    console.error("Lỗi nhận diện giọng nói:", e);
+    if (e.error === "no-speech") {
+      alert("Không nhận diện được giọng nói. Vui lòng thử lại.");
+    }
+  };
+
+  recognition.start();
+}
+
+function toggleSpeechTranslation() {
+  isSpeechTranslating = !isSpeechTranslating;
+  document.getElementById("speechTranslateBtn").innerHTML = isSpeechTranslating ? '<i class="fas fa-language"></i> Tắt phiên dịch giọng nói' : '<i class="fas fa-language"></i> Phiên dịch giọng nói';
+  if (isSpeechTranslating) {
+    if (!audioTrack) {
+      startMedia(false, true);
+    } else {
+      startSpeechRecognition();
+    }
+  } else if (recognition) {
+    recognition.stop();
+  }
+}
+
+// Typing indicator
+document.getElementById("messageInput").addEventListener("input", () => {
+  socket.emit("typing", { username });
+});
+
+socket.on("typing", data => {
+  if (data.username !== username) {
+    document.getElementById("typingIndicator").classList.remove("hidden");
+    setTimeout(() => document.getElementById("typingIndicator").classList.add("hidden"), 3000);
+  }
+});
+
+// Send file
+function sendFile() {
+  const fileInput = document.getElementById("fileInput");
+  const file = fileInput.files[0];
+  if (!file) return alert("Vui lòng chọn một file để gửi.");
+
+  const reader = new FileReader();
+  const isVideo = file.type.startsWith("video/");
+  const progressContainer = document.getElementById("progressContainer");
+  const progressBar = document.getElementById("progressBar");
+  const estimate = document.getElementById("progressEstimate");
+
+  let startTime = 0;
+
+  reader.onloadstart = () => {
+    startTime = Date.now();
+    progressContainer.classList.remove("hidden");
+    progressBar.style.width = "0%";
+    estimate.textContent = "";
+  };
+
+  reader.onprogress = (event) => {
+    if (event.lengthComputable) {
+      const percent = (event.loaded / event.total) * 100;
+      progressBar.style.width = percent + "%";
+      if (isVideo && percent > 5) {
+        const elapsed = (Date.now() - startTime) / 1000;
+        const estTotal = elapsed / (percent / 100);
+        const remaining = estTotal - elapsed;
+        estimate.textContent = `Đang gửi video... còn lại: ${remaining.toFixed(1)} giây`;
+      }
+    }
+  };
+
+  reader.onload = () => {
+    socket.emit("send_file", {
+      from: username,
+      name: file.name,
+      type: file.type,
+      data: reader.result,
+      timestamp: new Date().toLocaleTimeString()
+    });
+    fileInput.value = "";
+    document.getElementById("filePreview").classList.add("hidden");
+    progressBar.style.width = "100%";
+    estimate.textContent = isVideo ? "✅ Đã gửi!" : "";
+  };
+
+  reader.onloadend = () => {
+    setTimeout(() => {
+      progressContainer.classList.add("hidden");
+      progressBar.style.width = "0%";
+      estimate.textContent = "";
+    }, 1500);
+  };
+
+  reader.readAsDataURL(file);
+}
+
+// Receive file
+socket.on("receive_file", data => {
+  const chat = document.getElementById("chatBox");
+  const { from, name, type, data: fileData, timestamp } = data;
+  let html = `<div class="chat-bubble other"><strong>${sanitizeHTML(from)}</strong> <span class="text-xs text-gray-500">(${timestamp})</span>:<br/>`;
+
+  if (type.startsWith("image/")) {
+    html += `<img src="${fileData}" alt="${sanitizeHTML(name)}" class="max-h-24 mt-1 rounded-md"/>`;
+  } else if (type.startsWith("video/")) {
+    html += `<video controls src="${fileData}" class="max-h-36 mt-1 rounded-md"></video>`;
+  } else if (type === "application/pdf") {
+    html += `<iframe src="${fileData}" class="w-full max-w-xs h-32 border rounded mt-1"></iframe><br/>
+             <a href="${fileData}" download="${sanitizeHTML(name)}" class="text-blue-500 underline text-xs">📄 ${sanitizeHTML(name)}</a>`;
+  } else {
+    html += `<a href="${fileData}" download="${sanitizeHTML(name)}" class="text-blue-500 underline text-xs">📎 ${sanitizeHTML(name)}</a>`;
+  }
+
+  html += `</div>`;
+  chat.innerHTML += html;
+  chat.scrollTop = chat.scrollHeight;
+  toggleScrollButton();
+});
+
+// File preview
+document.getElementById("fileInput").addEventListener("change", () => {
+  const fileInput = document.getElementById("fileInput");
+  const file = fileInput.files[0];
+  const preview = document.getElementById("filePreview");
+  const previewContent = document.getElementById("previewContent");
+
+  if (!file) {
+    preview.classList.add("hidden");
+    return;
+  }
+
+  preview.classList.remove("hidden");
+  previewContent.innerHTML = "";
+
+  if (file.type.startsWith("image/")) {
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(file);
+    img.className = "max-h-24 rounded-md";
+    previewContent.appendChild(img);
+  } else if (file.type.startsWith("video/")) {
+    const video = document.createElement("video");
+    video.src = URL.createObjectURL(file);
+    video.controls = true;
+    video.className = "max-h-36 rounded-md";
+    previewContent.appendChild(video);
+  } else {
+    previewContent.innerHTML = `<p class="text-xs text-gray-600">File: ${sanitizeHTML(file.name)}</p>`;
+  }
+});
+
+// Scroll to bottom button
+function toggleScrollButton() {
+  const chatBox = document.getElementById("chatBox");
+  const scrollButton = document.getElementById("scrollToBottom");
+  scrollButton.style.display = chatBox.scrollHeight > chatBox.clientHeight && chatBox.scrollTop + chatBox.clientHeight < chatBox.scrollHeight - 10 ? "block" : "none";
+}
+
+document.getElementById("scrollToBottom").addEventListener("click", () => {
+  const chatBox = document.getElementById("chatBox");
+  chatBox.scrollTop = chatBox.scrollHeight;
+});
+
+// Handle Enter key for messages and files
+document.addEventListener("DOMContentLoaded", () => {
+  const messageInput = document.getElementById("messageInput");
+  const fileInput = document.getElementById("fileInput");
+
+  messageInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  fileInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendFile();
+    }
+  });
+});
+
+// Dark mode toggle
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  document.getElementById("themeToggle").innerHTML = document.body.classList.contains("dark") ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 });
 </script>
-
-<script src="{{ url_for('static', filename='fix-svg-viewbox.js') }}"></script>
-
 </body>
 </html>
+```
