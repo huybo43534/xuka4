@@ -200,7 +200,8 @@ socket.on("receive_message", data => {
   chat.scrollTop = chat.scrollHeight;
 });
 </script>
-<script src="js/fix-svg-viewbox.js"></script>
+
+<script src="{{ url_for('static', filename='fix-svg-viewbox.js') }}"></script>
 
 </body>
 </html>
