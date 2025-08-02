@@ -15,9 +15,11 @@ from flask_socketio import SocketIO, emit
 app = Flask(__name__)
 app.config["JSONIFY_PRETTYPRINT_REGULAR"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change_this_secret_key")
-QUESTIONS_FILE = "questions.json"
-QUESTION_DIR = "D:/xuka4_ready/questions"
-socketio = SocketIO(app)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+QUESTION_DIR = os.path.join(BASE_DIR, "questions")
+QUESTIONS_FILE = os.path.join(QUESTION_DIR, "questions.json")
+socketio = SocketIO(app, async_mode="threading")
+
 
 
 # CSRF
