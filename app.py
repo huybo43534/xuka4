@@ -142,7 +142,7 @@ def h2():
 def index():
     return render_template("index.html")
 
-@app.route("/web")
+@app.route("/")
 def web():
     return render_template("index_web.html")
 
